@@ -1,0 +1,15 @@
+<template>
+  <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.51676 14.1406H5.08051V7.69323H7.22426L7.54801 5.18495H5.08051V3.57753C5.08051 2.8533 5.28176 2.35871 6.31426 2.35871H7.63551V0.106551C7.40801 0.0800553 6.62926 0.00939941 5.71926 0.00939941C3.81176 0.00939941 2.51676 1.18405 2.51676 3.33023V5.18495H0.364258V7.69323H2.51676V14.1406Z" fill="white"/>
+  </svg>
+</template>
+
+<script>
+export default {
+name: "Facebookpic"
+}
+</script>
+
+<style scoped>
+
+</style>
