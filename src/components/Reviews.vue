@@ -5,32 +5,38 @@
       <p class="textClass" style="margin-top: -107px; font-size: 36px">Отзывы путешественников</p>
     </div>
     <div class="middleDiv">
-      <div class="middleInnerDiv">
-        <div class="cardDiv" v-for="reviews in listOfReviews" :key="reviews.id">
-          <div>
-            <img style="border: 2px solid #2E595E" height="200px" width="220px" :src=reviews.img alt="photo">
-          </div>
-          <div>
-            <p style="font-family: 'Streamster(RUS BY LYAJKA)'; font-size: 24px; margin: 0">{{reviews.name}}</p>
-          </div>
-          <div style="padding: 0 5px">
-            <p style="font-family: archivo; font-size: 14px">{{reviews.content}}</p>
-          </div>
-          <div class="kekDiv">
-            <p style="margin: 10px; font-family: 'Streamster(RUS BY LYAJKA)'; font-size: 25px">Наведите, чтобы посмотреть отзыв</p>
-          </div>
-        </div>
-      </div>
+        <Slider :slider-items="listOfReviews" :transform="25">
+          <template v-slot="{item}">
+            <div class="innerSliderDiv">
+            <div class="imgDiv">
+              <img height="200px" class="imgSlider" :src=item.img alt="photo">
+            </div>
+            <div>
+              <p class="sliderItemTitle" style="font-family: 'Streamster(RUS BY LYAJKA)'; font-size: 24px; margin: 0">{{item.id}}{{item.name}}</p>
+            </div>
+            <div >
+              <p class="sliderItemContent" style="font-family: archivo; font-size: 14px; margin: 14px">{{item.content}}</p>
+            </div>
+            </div>
+          </template>
+        </Slider>
     </div>
     <div class="centeringDiv" style="background-color: white">
       <button class="btn">
         <p>Все отзывы</p>
       </button>
+      <p style="font-family: archivo; font-size: 18px; margin: 0">Получи скидку 20% на свой первый тур прямо сейчас!</p>
+      <div class="formDiv">
+        <input style="height: 40px; width: 285px;" type="text" placeholder="E-mail">
+        <button class="submitButton">Отправить</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Slider from "@/components/Slider";
+
 export default {
 name: "Reviews",
   data() {
@@ -38,30 +44,59 @@ name: "Reviews",
     listOfReviews:[
       {
         id: 1,
+        order: 0,
         name: 'СветОчка',
         img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
       },
       {
         id: 2,
+        order: 0,
         name: 'СветОчка',
         img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
       },
       {
         id: 3,
+        order: 0,
         name: 'СветОчка',
         img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
       },
       {
         id: 4,
+        order: 0,
+        name: 'СветОчка',
+        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
+      },
+      {
+        id: 5,
+        order: 0,
+        name: 'СветОчка',
+        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
+      },
+      {
+        id: 6,
+        order: 0,
+        name: 'СветОчка',
+        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
+      },
+      {
+        id: 7,
+        order: 0,
         name: 'СветОчка',
         img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
       },
     ]
   }
+  },
+  components:{
+    Slider,
+
   }
 }
 </script>
@@ -77,10 +112,20 @@ name: "Reviews",
 }
 .centeringDiv{
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
   flex-direction: column;
   width: 100%;
+  height: 142.5px;
+}
+.innerSliderDiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.55)
 }
 .btn{
   background: #FFFFFF;
@@ -94,37 +139,45 @@ name: "Reviews",
   color: rgba(255, 255, 255, 0.15);
 }
 .middleDiv{
-  background-color: white;
-  width: 100%;
-}
-.middleInnerDiv{
-  padding: 3% 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to top, white, #031E26);
-  flex-wrap: wrap;
+  background-color: white;
+  width: 100%;
 }
-.cardDiv{
-  position: relative;
+.imgDiv{
+  margin-top: 18px;
+  width: 85%;
+  overflow: hidden;
+}
+.imgSlider{
+  height: 300px;
+  width: 100%;
+  transition: 0.5s;
+}
+.sliderItemTitle{
+  margin: 5px 0 0 0;
+  text-align: center;
+  font-size: 27px;
+}
+.sliderItemContent{
+  text-align: center;
+}
+.formDiv{
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  width: 250px;
-  background-color: white;
-  margin: 0 10px;
-  padding: 10px 0;
-  margin-bottom: 20px;
+  align-items: center;
 }
-.kekDiv{
-  position: absolute;
-  height: 38%;
+.submitButton{
+  height: 46px;
+  width: 90px;
+  background: #777777;
+}
+.imgSlider{
   width: 100%;
-  background-color: white;
-  top: 62%
+  transition: 0.5s;
 }
-.cardDiv:hover .kekDiv{
-  z-index: -1;
+.imgSlider:hover{
+  transform: scale(1.15);
 }
 </style>

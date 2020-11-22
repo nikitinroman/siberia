@@ -2,22 +2,38 @@
   <div class="mainDiv">
     <div class="headerDiv">
       <p style="color: rgba(46, 89, 94, 0.15); font-family: archivo; font-size: 64px; margin: 0">Вопросы и ответы</p>
-      <p style="color: #2E595E; font-family: archivo; font-size: 48px; margin: 0; margin-top: -40px">Вопросы и ответы</p>
+      <p style="color: #2E595E; font-family: archivo; font-size: 48px; margin: 0; margin-top: -45px; margin-bottom: 30px">Вопросы и ответы</p>
     </div>
     <div class="askAnswersDiv">
+      <div style="width: 15%"></div>
       <div class="asksDiv">
-        <div v-for="ask in listAskAnswers" :key="ask.id">
-          <p class="askP" :class="{active : chosed==ask.id}" v-on:click="chosed = ask.id">{{ask.ask}}</p>
+        <div :class="{active : chosed==ask.id}" v-on:click="chosed = ask.id" class="askDiv" v-for="ask in listAskAnswers" :key="ask.id">
+          <div>
+            <DogGreen class="lapaClass" v-if="chosed!=ask.id"></DogGreen>
+            <DogRotate class="lapaClass" v-else></DogRotate>
+          </div>
+          <div style="width: 90%; margin-left: 2%">
+            <p style="font-size: 18px; font-family: archivo;">{{ask.ask}}</p>
+          </div>
         </div>
       </div>
-      <div>
-        <p>{{chosed}}{{listAskAnswers[chosed].answer}}</p>
+      <div class="rightDiv">
+        <div style="background: linear-gradient(180deg, #7AA5AA 0%, rgba(122, 165, 170, 0) 100%); height: 60px; display: flex; align-items: center">
+          <p style="font-size: 22px; font-family: archivo; margin-left: 4%">{{listAskAnswers[chosed].ask}}</p>
+        </div>
+        <div style="height: 1px; border-top: 1px solid #7CA5CA; width: 70%"></div>
+        <p style="width: 85%; font-size: 18px; font-family: archivo; margin-left: 4%">{{chosed}}{{listAskAnswers[chosed].answer}}</p>
       </div>
+      <div style="width: 10%"></div>
     </div>
+    <div style="height: 100px"></div>
   </div>
 </template>
 
 <script>
+import DogRotate from './svgComponents/DogRotate'
+import DogGreen from './svgComponents/DogGreen'
+
 export default {
 name: "AsksAnswers",
   data(){
@@ -87,6 +103,11 @@ name: "AsksAnswers",
 
     ],
   }
+  },
+  components:{
+    DogGreen,
+    DogRotate,
+
   }
 }
 </script>
@@ -113,18 +134,34 @@ name: "AsksAnswers",
 .asksDiv{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
 }
-.askP{
-
+.askDiv{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 85%;
+  padding-left: 6px;
+  height: 50px;
 }
-.askP:hover{
-  background-color: #2E595E;
+.askDiv:hover{
+  background-color: #7AA5AA;
   color: #FFFFFF;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
 }
-.askP.active{
-  background-color: #2E595E;
+.askDiv.active{
+  background-color: #7AA5AA;
   color: #FFFFFF;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
+}
+.rightDiv{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, #7CA5CA 0%, rgba(124, 165, 202, 0) 100%);
+}
+.lapaClass{
 }
 </style>

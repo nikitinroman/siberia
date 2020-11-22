@@ -1,12 +1,13 @@
 <template>
   <div>
     <StartPage></StartPage>
-    <AboutUs></AboutUs>
-    <Roads></Roads>
+    <AboutUs id="О нас"></AboutUs>
+    <Roads id="Типы маршрутов"></Roads>
     <RoadsPromo id="Маршруты"></RoadsPromo>
-    <Reviews></Reviews>
+    <Reviews id="Отзывы"></Reviews>
     <PhotoVideo id="Фото"></PhotoVideo>
-    <AsksAnswers></AsksAnswers>
+    <AsksAnswers id="Вопросы и ответы"></AsksAnswers>
+    <Footer id="Контакты"></Footer>
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import RoadsPromo from "@/components/RoadsPromo";
 import Reviews from "@/components/Reviews";
 import PhotoVideo from "@/components/PhotoVideo";
 import AsksAnswers from "@/components/AsksAnswers";
+import Footer from "@/components/Footer";
 
 export default {
   name: 'App',
@@ -34,6 +36,7 @@ export default {
     Reviews,
     PhotoVideo,
     AsksAnswers,
+    Footer,
 
   }
 }

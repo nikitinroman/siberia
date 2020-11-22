@@ -6,7 +6,7 @@
         <p class="bigP">Маршруты</p>
         <p class="smallP">Маршруты</p>
       </div>
-      <Slider :slider-items="sliderItems">
+      <Slider :slider-items="sliderItems" :transform="25">
         <template v-slot="{item}">
           <div class="innerSliderDiv">
             <router-link :to="'/AboutTour/' + item.id + '/' + item.title" :key="item.id" class="imgDiv" tag="div">

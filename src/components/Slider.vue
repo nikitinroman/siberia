@@ -1,9 +1,9 @@
 <template>
-  <div style="position: relative; max-width: 70%;">
+  <div class="mainDiv3" :class="{ mainDiv1 : quantity === 1}">
     <button class="btnClass" style="left:-1%" @click="moveLeft">&lt;</button>
     <div class="ownerDiv">
-      <ul class="mainSliderUl" :style="{transform: 'translateX(' + transform + '%)'}" :class="{transDiv : transition}">
-        <li v-for="item in sliderItems" :key="item.id" class="innerSliderLi" :style="{'order': item.order}">
+      <ul class="mainSliderUl3" :class="{mainSliderUl1: quantity === 1, transDiv : transition}" :style="{transform: 'translateX(' + transform + '%)'}">
+        <li v-for="item in sliderItems" :key="item.id" class="innerSliderLi3" :class="{innerSliderLi1: quantity === 1}" :style="{'order': item.order}">
           <slot v-bind:item="item"></slot>
         </li>
       </ul>
@@ -13,14 +13,13 @@
 </template>
 
 <script>
-
 export default {
-  props: ['sliderItems'],
+  props: ['sliderItems', 'quantity', 'transform'],
   name: "Slider",
 
   methods: {
     async moveLeft() {
-      this.transform = 25
+      this.transform = this.trans
       this.transition = true
       await new Promise(resolve => setTimeout(resolve, 500))
       this.currentId--
@@ -32,7 +31,7 @@ export default {
       this.transition = false
     },
     async moveRight() {
-      this.transform = -25
+      this.transform = -this.trans
       this.transition = true
       await new Promise(resolve => setTimeout(resolve, 500))
       this.sliderItems[this.currentId].order += 1
@@ -46,9 +45,9 @@ export default {
   },
   data() {
     return {
-      transform: 0,
       transition: false,
       currentId: 0,
+      trans: this.transform,
     }
   }
 }
@@ -62,15 +61,25 @@ export default {
   margin: auto;
 }
 
-.mainSliderUl {
+.mainSliderUl3 {
   display: flex;
   margin-left: -33.333%;
 }
+.mainSliderUl1 {
+  display: flex;
+  margin-left: 0;
+}
 
-.innerSliderLi {
+.innerSliderLi3 {
   height: 100%;
   width: 25%;
   padding: 0 5px;
+  box-sizing: border-box;
+}
+.innerSliderLi1 {
+  height: 100%;
+  width: 100%;
+  padding: 0 0px;
   box-sizing: border-box;
 }
 
@@ -96,5 +105,12 @@ ul {
 
 .transDiv {
   transition: 0.5s;
+}
+.mainDiv3{
+  position: relative;
+  max-width: 70%;
+}
+.mainDiv1{
+  max-width: 100%;
 }
 </style>
