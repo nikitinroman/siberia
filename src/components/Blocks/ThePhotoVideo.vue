@@ -10,22 +10,22 @@
         <template v-slot="{ item }">
           <div class="gridDiv">
             <div class="picorvid">
-              <img :src="item.content[0]" alt="photo"/>
+              <img :src="item.content[0]" alt="photo" />
             </div>
             <div class="picorvid">
               <iframe
-                  width="100%"
-                  height="100%"
-                  :src="item.content[1]"
-                  frameborder="0"
-                  allowfullscreen
+                width="100%"
+                height="100%"
+                :src="item.content[1]"
+                frameborder="0"
+                allowfullscreen
               ></iframe>
             </div>
             <div class="picorvid">
-              <img :src="item.content[2]" alt="photo"/>
+              <img :src="item.content[2]" alt="photo" />
             </div>
             <div class="picorvid">
-              <img :src="item.content[3]" alt="photo"/>
+              <img :src="item.content[3]" alt="photo" />
             </div>
           </div>
         </template>
@@ -110,9 +110,10 @@ export default {
   align-items: center;
   flex-direction: column;
   background-image: url("/Baikal.jpg");
-  background-position: 0% 73%;
+  background-position: 0 73%;
   background-repeat: no-repeat;
   background-size: 100%;
+  margin-top: 20px;
 }
 
 .pDiv {
@@ -146,14 +147,14 @@ img {
   color: rgba(46, 89, 94, 0.15);
   font-size: 64px;
   margin: 0;
-  font-family: archivo;
+  font-family: archivo, sans-serif;
 }
 
 .pSmall {
   color: rgba(46, 89, 94, 1);
   margin-top: -40px;
   font-size: 36px;
-  font-family: archivo;
+  font-family: archivo, sans-serif;
 }
 
 .picorvid {

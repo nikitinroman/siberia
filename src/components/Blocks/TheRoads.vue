@@ -6,7 +6,7 @@
         <p class="pSmall">Типы маршрутов</p>
       </div>
       <div class="pictureDiv">
-        <img width="100%" class="imgStyle" :src="forestpic" alt="Picture"/>
+        <img width="100%" class="imgStyle" :src="forestpic" alt="Picture" />
       </div>
       <div class="botDiv">
         <div></div>
@@ -21,9 +21,9 @@
         <p class="marshType">Пешие</p>
         <div class="marshList" v-for="row in listOfGround" v-bind:key="row">
           <img
-              style="margin-right: 5px"
-              src="/images/icons/dog.svg"
-              alt="Иконка Лапки"
+            style="margin-right: 5px"
+            src="/images/icons/dog.svg"
+            alt="Иконка Лапки"
           />
           <p class="pTypes">{{ row }}</p>
         </div>
@@ -34,9 +34,9 @@
         <p class="marshType">Водные</p>
         <div class="marshList" v-for="row in listOfWater" v-bind:key="row">
           <img
-              style="margin-right: 5px"
-              src="/images/icons/duck.svg"
-              alt="Иконка Утки"
+            style="margin-right: 5px"
+            src="/images/icons/duck.svg"
+            alt="Иконка Утки"
           />
           <p class="pTypes">{{ row }}</p>
         </div>
@@ -93,7 +93,7 @@ export default {
 
 .pSmall {
   font-size: 36px;
-  margin-top: -100px;
+  margin-top: -35px;
   font-family: archivo, sans-serif;
 }
 
@@ -148,7 +148,7 @@ export default {
 }
 
 .marshType {
-  font-family: streamster;
+  font-family: streamster, sans-serif;
   font-size: 48px;
   margin: 0;
   color: white;

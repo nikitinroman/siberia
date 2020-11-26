@@ -5,41 +5,39 @@
         <div class="languageDiv">
           Russian
         </div>
-        <div></div>
-        <div></div>
-        <div>
-          <!--          <Burger></Burger>-->
-        </div>
+        <!--        <div>-->
+        <!--                    <Burger></Burger>-->
+        <!--        </div>-->
       </div>
 
-      <div/>
+      <div />
 
       <div class="botDiv">
         <div class="linksDiv">
-          <div>
-            <img src="/images/icons/facebook.svg" alt="Иконка Facebook"/>
-          </div>
-          <div>
-            <img src="/images/icons/twitter.svg" alt="Иконка Twitter"/>
-          </div>
-          <div>
-            <img src="/images/icons/vk.svg" alt="Иконка VK"/>
-          </div>
-          <div>
-            <img src="/images/icons/instagram.svg" alt="Иконка Instagram"/>
-          </div>
+          <a href="https://ru-ru.facebook.com/">
+            <img src="/images/icons/facebook.svg" alt="Иконка Facebook" />
+          </a>
+          <a href="https://twitter.com/?lang=ru">
+            <img src="/images/icons/twitter.svg" alt="Иконка Twitter" />
+          </a>
+          <a href="https://vk.com/nikitin__roman">
+            <img src="/images/icons/vk.svg" alt="Иконка VK" />
+          </a>
+          <a href="https://www.instagram.com/nikitoss420/">
+            <img src="/images/icons/instagram.svg" alt="Иконка Instagram" />
+          </a>
         </div>
 
-        <div/>
+        <div />
 
         <div class="anchorDiv">
-          <a href="#Маршруты">
+          <a href="#Roads">
             Маршруты
           </a>
-          <a href="#Фото">
+          <a href="#Photo">
             Фото
           </a>
-          <a href="#">
+          <a href="Footer">
             Контакты
           </a>
         </div>
@@ -81,12 +79,17 @@ a {
 
 .topDiv {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .languageDiv {
   color: white;
   text-decoration: underline;
+  margin-left: 200px;
+}
+
+.languageDiv:hover {
+  cursor: pointer;
 }
 
 .botDiv {

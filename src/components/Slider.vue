@@ -94,7 +94,7 @@ export default {
 .innerSliderLi1 {
   height: 100%;
   width: 100%;
-  padding: 0 0px;
+  padding: 0 0;
   box-sizing: border-box;
 }
 
@@ -116,6 +116,10 @@ ul {
   background-color: transparent;
   border: none;
   font-size: 40px;
+}
+
+.btnClass:hover {
+  cursor: pointer;
 }
 
 .transDiv {

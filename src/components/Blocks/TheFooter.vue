@@ -7,21 +7,21 @@
       </div>
       <div class="linksDiv">
         <div class="smallDiv">
-          <a href="#О нас">О нас</a>
-          <a href="#Контакты">Контакты</a>
+          <a href="#About Us">О нас</a>
+          <a href="#Start">Контакты</a>
         </div>
         <div class="smallDiv">
-          <a href="#Маршруты">Маршруты</a>
-          <a href="#Фото">Фото</a>
+          <a href="#Roads">Маршруты</a>
+          <a href="#Photo">Фото</a>
         </div>
         <div class="smallDiv">
-          <a href="#Отзывы">Отзывы</a>
-          <a style="width: 130px" href="#Вопросы и ответы">Вопросы и ответы</a>
+          <a href="#Reviews">Отзывы</a>
+          <a style="width: 130px" href="#Asks answers">Вопросы и ответы</a>
         </div>
         <div class="smallDiv" style="margin-top: -18px">
           <p class="pRenewal">Подпишитесь на наши обновления</p>
           <div>
-            <input type="text" placeholder="Email"/>
+            <input type="text" placeholder="Email" />
             <button class="buttonRenewal">Клац :)</button>
           </div>
         </div>
@@ -59,6 +59,11 @@ button {
   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
   color: #ffffff;
   font-size: 18px;
+  margin-top: 20px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .innerDiv {
@@ -67,6 +72,7 @@ button {
   align-items: center;
   flex-direction: column;
   color: white;
+  margin-bottom: 10px;
 }
 
 a {
@@ -96,7 +102,7 @@ input {
 }
 
 .pPoster {
-  font-family: "Streamster(RUS BY LYAJKA)";
+  font-family: "Streamster(RUS BY LYAJKA)", archivo, sans-serif;
   font-size: 40px;
 }
 
@@ -110,5 +116,9 @@ input {
   width: 90px;
   box-shadow: none;
   margin-top: 0;
+}
+
+.buttonRenewal:hover {
+  cursor: pointer;
 }
 </style>

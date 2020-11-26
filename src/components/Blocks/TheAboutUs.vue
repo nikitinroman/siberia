@@ -28,12 +28,12 @@
     </div>
     <div class="contentDiv">
       <div class="topDiv">
-        <img class="bluredImg" :src="leftpic" width="100%" height="100%"/>
+        <img class="bluredImg" :src="leftpic" width="100%" height="100%" alt="blured image"/>
       </div>
       <div class="middleDiv">
         <div class="overflowDiv">
           <div style="max-width: 80%;">
-            <p style="font-family: streamster; font-size: 70px">
+            <p style="font-family: streamster, sans-serif; font-size: 70px">
               О нас
             </p>
           </div>
@@ -44,7 +44,7 @@
               присоединиться можно как одному участнику, так и с друзьями. Для
               организованных групп от 10 человек мы готовы предложить поход по
               любому из имеющихся у нас на сайте маршрутов в отдельные удобные
-              сроки.<br/><br/>
+              сроки.<br /><br />
               Инструкторы, с которыми вы можете отправиться в путешествие,
               прошли множество походов и специальную подготовку. Это опытные
               путешественники, увлеченные и творческие люди, для которых походы
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="middlerightDiv">
-        <img class="rightimg" :src="rightpic"/>
+        <img class="rightimg" :src="rightpic" alt="right img"/>
       </div>
     </div>
   </div>
@@ -105,12 +105,12 @@ export default {
 .textBack {
   font-size: 63px;
   opacity: 0.5;
-  font-family: streamster;
+  font-family: streamster, sans-serif;
 }
 
 .textFront {
-  margin-top: -50px;
-  font-family: streamster;
+  margin-top: -35px;
+  font-family: streamster, sans-serif;
 }
 
 p {
@@ -128,6 +128,7 @@ p {
 
 .btnClass:hover {
   background-color: #777;
+  cursor: pointer;
 }
 
 .mainDiv {
@@ -149,7 +150,7 @@ p {
   font-size: 25px;
   color: white;
   margin-right: 20px;
-  font-family: streamster;
+  font-family: streamster, sans-serif;
 }
 
 .bluredImg {
@@ -191,7 +192,7 @@ p {
 }
 
 .infoaboutus {
-  font-family: archivo;
+  font-family: archivo, sans-serif;
   font-size: 14px;
   line-height: 15px;
   vertical-align: top;

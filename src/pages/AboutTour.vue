@@ -9,12 +9,12 @@
         <div></div>
         <div class="leftDiv">
           <div class="titleDiv" style="justify-content: flex-start">
-            <p style="font-size: 32px; font-family: streamster; margin: 0">
+            <p class="currentDay">
               День {{ currentDay }}
             </p>
           </div>
           <div>
-            <p style="font-family: archivo">
+            <p style="font-family: archivo, archivo, sans-serif">
               {{ otherContent[id].days[currentDay][0] }}
             </p>
           </div>
@@ -24,7 +24,7 @@
               v-on:click="currentDay -= 1"
               v-if="currentDay > 1"
             >
-              <p style="font-size: 18px; font-family: streamster; margin: 0">
+              <p class="pInButton">
                 &#8592; День {{ currentDay - 1 }}
               </p>
             </button>
@@ -33,7 +33,7 @@
               v-on:click="currentDay += 1"
               v-if="currentDay < Object.keys(otherContent[id].days).length"
             >
-              <p style="font-size: 18px; font-family: streamster; margin: 0">
+              <p class="pInButton">
                 День {{ currentDay + 1 }} &#8594;
               </p>
             </button>
@@ -46,12 +46,12 @@
             alt="Дикпик"
           />
           <div class="titleDiv">
-            <p style="font-family: archivo; font-size: 24px; margin: 0">
+            <p class="tour">
               {{ tour }}
             </p>
           </div>
           <div>
-            <p style="font-family: archivo">
+            <p style="font-family: archivo, sans-serif, Archivo">
               {{ otherContent[id].underPicContent[currentDay - 1] }}
             </p>
           </div>
@@ -59,7 +59,9 @@
         <div></div>
       </div>
       <div class="buttonBot">
-        <button class="buttonStyle addButton">Подробнее</button>
+        <router-link :to="'/'" tag="button" class="buttonStyle addButton">
+          Назад
+        </router-link>
       </div>
     </div>
   </div>
@@ -277,7 +279,7 @@ export default {
 
 .pBig {
   color: rgba(255, 255, 255, 0.25);
-  font-family: archivo;
+  font-family: archivo, sans-serif;
   font-weight: bold;
   font-size: 64px;
   margin: 0;
@@ -285,7 +287,7 @@ export default {
 
 .pSmall {
   color: white;
-  font-family: archivo;
+  font-family: archivo, sans-serif;
   font-weight: bold;
   font-size: 30px;
   margin-top: -30px;
@@ -309,4 +311,27 @@ export default {
   border: 1px solid #7ca5ca;
   filter: drop-shadow(0px 0px 3px #1a456c);
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+.pInButton {
+  font-size: 18px;
+  font-family: streamster, sans-serif;
+  margin: 0;
+}
+
+.currentDay {
+  font-size: 32px;
+  font-family: streamster, sans-serif;
+  margin: 0;
+}
+
+.tour {
+  font-family: archivo, sans-serif;
+  font-size: 24px;
+  margin: 0;
+}
+
 </style>

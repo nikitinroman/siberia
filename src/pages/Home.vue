@@ -1,13 +1,13 @@
 <template>
   <div>
-    <StartPage />
-    <AboutUs id="О нас" />
-    <Roads id="Типы маршрутов" />
-    <RoadsPromo id="Маршруты" />
-    <Reviews id="Отзывы" />
-    <PhotoVideo id="Фото" />
-    <AsksAnswers id="Вопросы и ответы" />
-    <Footer id="Контакты" />
+    <StartPage id="Start" />
+    <AboutUs id="About us" />
+    <Roads id="Road types" />
+    <RoadsPromo id="Roads" />
+    <Reviews id="Reviews" />
+    <PhotoVideo id="Photo" />
+    <AsksAnswers id="Asks answers" />
+    <Footer id="Footer" />
   </div>
 </template>
 
