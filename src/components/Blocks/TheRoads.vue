@@ -6,12 +6,13 @@
         <p class="pSmall">Типы маршрутов</p>
       </div>
       <div class="pictureDiv">
-        <img width="100%" class="imgStyle" :src="forestpic" alt="Picture">
+        <img width="100%" class="imgStyle" :src="forestpic" alt="Picture"/>
       </div>
       <div class="botDiv">
         <div></div>
         <div>
-          <p class="botP">То, что ты не увидишь в городе!</p></div>
+          <p class="botP">То, что ты не увидишь в городе!</p>
+        </div>
         <div></div>
       </div>
     </div>
@@ -19,7 +20,11 @@
       <div class="innerDiv">
         <p class="marshType">Пешие</p>
         <div class="marshList" v-for="row in listOfGround" v-bind:key="row">
-          <img style="margin-right: 5px" src="/images/icons/dog.svg" alt="Иконка Лапки"/>
+          <img
+              style="margin-right: 5px"
+              src="/images/icons/dog.svg"
+              alt="Иконка Лапки"
+          />
           <p class="pTypes">{{ row }}</p>
         </div>
       </div>
@@ -28,7 +33,11 @@
       <div class="innerDiv">
         <p class="marshType">Водные</p>
         <div class="marshList" v-for="row in listOfWater" v-bind:key="row">
-          <img style="margin-right: 5px" src="/images/icons/duck.svg" alt="Иконка Утки"/>
+          <img
+              style="margin-right: 5px"
+              src="/images/icons/duck.svg"
+              alt="Иконка Утки"
+          />
           <p class="pTypes">{{ row }}</p>
         </div>
       </div>
@@ -37,23 +46,34 @@
 </template>
 
 <script>
-import forestpic from "../../../public/forest.jpg"
+import forestpic from "../../../public/forest.jpg";
 
 export default {
   data() {
     return {
       forestpic,
-      listOfGround: ['Восхождение', 'Скалолазанье', 'Переходы налегке', 'Переходы с рюкзаками', 'Горный лагерь'],
-      listOfWater: ['Сплав', 'На байдарках', 'На морских каяках', 'На лодках', 'Рыбалка']
-    }
+      listOfGround: [
+        "Восхождение",
+        "Скалолазанье",
+        "Переходы налегке",
+        "Переходы с рюкзаками",
+        "Горный лагерь"
+      ],
+      listOfWater: [
+        "Сплав",
+        "На байдарках",
+        "На морских каяках",
+        "На лодках",
+        "Рыбалка"
+      ]
+    };
   },
-  components: {
-  }
-}
+  components: {}
+};
 </script>
 <style scoped>
 .mainDiv {
-  position: relative
+  position: relative;
 }
 
 .backgroundDiv {
@@ -62,7 +82,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
 }
 
 .pBig {
@@ -80,7 +100,7 @@ export default {
 .pictureDiv {
   overflow: hidden;
   width: 100%;
-  height: 25%
+  height: 25%;
 }
 
 .imgStyle {
@@ -89,12 +109,12 @@ export default {
 
 .botDiv {
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 .botP {
   font-family: streamster, sans-serif;
-  font-size: 48px
+  font-size: 48px;
 }
 
 .absDiv {
@@ -107,7 +127,7 @@ export default {
   left: 30%;
   display: flex;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
 }
 
 .addDivClass {
@@ -137,12 +157,12 @@ export default {
 
 .marshList {
   width: 70%;
-  display: flex
+  display: flex;
 }
 
 .pTypes {
   margin: 0 0 12px 0;
   text-align: start;
-  color: white
+  color: white;
 }
 </style>

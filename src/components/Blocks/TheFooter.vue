@@ -21,7 +21,7 @@
         <div class="smallDiv" style="margin-top: -18px">
           <p class="pRenewal">Подпишитесь на наши обновления</p>
           <div>
-            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Email"/>
             <button class="buttonRenewal">Клац :)</button>
           </div>
         </div>
@@ -32,8 +32,8 @@
 
 <script>
 export default {
-name: "Footer"
-}
+  name: "Footer"
+};
 </script>
 
 <style scoped>
@@ -57,7 +57,7 @@ button {
   height: 47px;
   background: #777777;
   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 18px;
 }
 
@@ -71,8 +71,8 @@ button {
 
 a {
   text-decoration: none;
-  color: #FFFFFF;
-  width: 100px
+  color: #ffffff;
+  width: 100px;
 }
 
 .linksDiv {
@@ -96,19 +96,19 @@ input {
 }
 
 .pPoster {
-  font-family: 'Streamster(RUS BY LYAJKA)';
-  font-size: 40px
+  font-family: "Streamster(RUS BY LYAJKA)";
+  font-size: 40px;
 }
 
 .pRenewal {
   margin: 0;
-  color: #FFFFFF
+  color: #ffffff;
 }
 
 .buttonRenewal {
   height: 47px;
   width: 90px;
   box-shadow: none;
-  margin-top: 0
+  margin-top: 0;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <StartPage/>
-    <AboutUs id="О нас"/>
-    <Roads id="Типы маршрутов"/>
-    <RoadsPromo id="Маршруты"/>
-    <Reviews id="Отзывы"/>
-    <PhotoVideo id="Фото"/>
-    <AsksAnswers id="Вопросы и ответы"/>
-    <Footer id="Контакты"/>
+    <StartPage />
+    <AboutUs id="О нас" />
+    <Roads id="Типы маршрутов" />
+    <RoadsPromo id="Маршруты" />
+    <Reviews id="Отзывы" />
+    <PhotoVideo id="Фото" />
+    <AsksAnswers id="Вопросы и ответы" />
+    <Footer id="Контакты" />
   </div>
 </template>
 
@@ -22,7 +22,7 @@ import Footer from "@/components/Blocks/TheFooter";
 import Roads from "@/components/Blocks/TheRoads";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     StartPage,
@@ -32,7 +32,7 @@ export default {
     Reviews,
     PhotoVideo,
     AsksAnswers,
-    Footer,
+    Footer
   }
-}
+};
 </script>

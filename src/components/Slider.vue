@@ -1,13 +1,21 @@
 <template>
-  <div class="mainDiv3" :class="{ mainDiv1 : quantity === 1}">
+  <div class="mainDiv3" :class="{ mainDiv1: quantity === 1 }">
     <button class="btnClass" style="left:-1%" @click="moveLeft">
       &lt;
     </button>
     <div class="ownerDiv">
-      <ul class="mainSliderUl3" :class="{mainSliderUl1: quantity === 1, transDiv : transition}"
-          :style="{transform: 'translateX(' + startTrans + '%)'}">
-        <li v-for="item in sliderItems" :key="item.id" class="innerSliderLi3" :class="{innerSliderLi1: quantity === 1}"
-            :style="{'order': item.order}">
+      <ul
+        class="mainSliderUl3"
+        :class="{ mainSliderUl1: quantity === 1, transDiv: transition }"
+        :style="{ transform: 'translateX(' + startTrans + '%)' }"
+      >
+        <li
+          v-for="item in sliderItems"
+          :key="item.id"
+          class="innerSliderLi3"
+          :class="{ innerSliderLi1: quantity === 1 }"
+          :style="{ order: item.order }"
+        >
           <slot v-bind:item="item"></slot>
         </li>
       </ul>
@@ -20,33 +28,33 @@
 
 <script>
 export default {
-  props: ['sliderItems', 'quantity', 'transform'],
+  props: ["sliderItems", "quantity", "transform"],
   name: "Slider",
 
   methods: {
     async moveLeft() {
-      this.startTrans = this.trans
-      this.transition = true
-      await new Promise(resolve => setTimeout(resolve, 500))
-      this.currentId--
+      this.startTrans = this.trans;
+      this.transition = true;
+      await new Promise(resolve => setTimeout(resolve, 500));
+      this.currentId--;
       if (this.currentId < 0) {
-        this.currentId = this.sliderItems.length - 1
+        this.currentId = this.sliderItems.length - 1;
       }
-      this.sliderItems[this.currentId].order -= 1
-      this.startTrans = 0
-      this.transition = false
+      this.sliderItems[this.currentId].order -= 1;
+      this.startTrans = 0;
+      this.transition = false;
     },
     async moveRight() {
-      this.startTrans = -this.trans
-      this.transition = true
-      await new Promise(resolve => setTimeout(resolve, 500))
-      this.sliderItems[this.currentId].order += 1
-      this.currentId++
+      this.startTrans = -this.trans;
+      this.transition = true;
+      await new Promise(resolve => setTimeout(resolve, 500));
+      this.sliderItems[this.currentId].order += 1;
+      this.currentId++;
       if (this.currentId > this.sliderItems.length - 1) {
-        this.currentId = 0
+        this.currentId = 0;
       }
-      this.startTrans = 0
-      this.transition = false
+      this.startTrans = 0;
+      this.transition = false;
     }
   },
   data() {
@@ -54,10 +62,10 @@ export default {
       transition: false,
       currentId: 0,
       trans: this.transform,
-      startTrans: 0,
-    }
+      startTrans: 0
+    };
   }
-}
+};
 </script>
 
 <style scoped>
@@ -96,7 +104,7 @@ li {
 }
 
 ul {
-  padding: 0
+  padding: 0;
 }
 
 .btnClass {

@@ -8,7 +8,7 @@
         <div></div>
         <div></div>
         <div>
-<!--          <Burger></Burger>-->
+          <!--          <Burger></Burger>-->
         </div>
       </div>
 
@@ -52,16 +52,15 @@
 // import Burger from '@/components/svgComponents/Burgerpic'
 
 export default {
-  name: 'MainBlock',
+  name: "MainBlock",
 
   components: {
     // Burger,
   }
-}
+};
 </script>
 
 <style scoped>
-
 .pictureDiv {
   display: flex;
   flex-direction: column;

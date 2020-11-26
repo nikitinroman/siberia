@@ -1,25 +1,32 @@
 <template>
   <div class="mainDiv">
     <div class="centeringDiv">
-      <p class="textClass" >Отзывы путешественников</p>
+      <p class="textClass">Отзывы путешественников</p>
       <p class="textClass textClassAdd">Отзывы путешественников</p>
     </div>
     <div class="middleDiv">
-        <Slider :slider-items="listOfReviews" :transform="25">
-          <template v-slot="{item}">
-            <div class="innerSliderDiv">
+      <Slider :slider-items="listOfReviews" :transform="25">
+        <template v-slot="{ item }">
+          <div class="innerSliderDiv">
             <div class="imgDiv">
-              <img height="200px" class="imgSlider" :src=item.img alt="photo">
+              <img
+                  height="200px"
+                  class="imgSlider"
+                  :src="item.img"
+                  alt="photo"
+              />
             </div>
             <div>
-              <p class="sliderItemTitle pStream">{{ item.id }}{{ item.name }}</p>
+              <p class="sliderItemTitle pStream">
+                {{ item.id }}{{ item.name }}
+              </p>
             </div>
-            <div >
+            <div>
               <p class="sliderItemContent pArch">{{ item.content }}</p>
             </div>
-            </div>
-          </template>
-        </Slider>
+          </div>
+        </template>
+      </Slider>
     </div>
     <div class="centeringDiv" style="background-color: white">
       <button class="btn">
@@ -27,7 +34,7 @@
       </button>
       <p class="pSale">Получи скидку 20% на свой первый тур прямо сейчас!</p>
       <div class="formDiv">
-        <input type="text" placeholder="E-mail">
+        <input type="text" placeholder="E-mail"/>
         <button class="submitButton">Отправить</button>
       </div>
     </div>
@@ -38,66 +45,80 @@
 import Slider from "@/components/Slider";
 
 export default {
-name: "Reviews",
+  name: "Reviews",
   data() {
-  return{
-    listOfReviews:[
-      {
-        id: 1,
-        order: 0,
-        name: 'СветОчка',
-        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
-      },
-      {
-        id: 2,
-        order: 0,
-        name: 'СветОчка',
-        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
-      },
-      {
-        id: 3,
-        order: 0,
-        name: 'СветОчка',
-        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
-      },
-      {
-        id: 4,
-        order: 0,
-        name: 'СветОчка',
-        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
-      },
-      {
-        id: 5,
-        order: 0,
-        name: 'СветОчка',
-        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
-      },
-      {
-        id: 6,
-        order: 0,
-        name: 'СветОчка',
-        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
-      },
-      {
-        id: 7,
-        order: 0,
-        name: 'СветОчка',
-        img: 'https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.'
-      },
-    ]
-  }
+    return {
+      listOfReviews: [
+        {
+          id: 1,
+          order: 0,
+          name: "СветОчка",
+          img:
+              "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
+          content:
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam."
+        },
+        {
+          id: 2,
+          order: 0,
+          name: "СветОчка",
+          img:
+              "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
+          content:
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam."
+        },
+        {
+          id: 3,
+          order: 0,
+          name: "СветОчка",
+          img:
+              "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
+          content:
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam."
+        },
+        {
+          id: 4,
+          order: 0,
+          name: "СветОчка",
+          img:
+              "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
+          content:
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam."
+        },
+        {
+          id: 5,
+          order: 0,
+          name: "СветОчка",
+          img:
+              "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
+          content:
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam."
+        },
+        {
+          id: 6,
+          order: 0,
+          name: "СветОчка",
+          img:
+              "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
+          content:
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam."
+        },
+        {
+          id: 7,
+          order: 0,
+          name: "СветОчка",
+          img:
+              "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
+          content:
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam."
+        }
+      ]
+    };
   },
-  components:{
-    Slider,
+  components: {
+    Slider
   }
-}
+};
 </script>
 
 <style scoped>
@@ -107,7 +128,7 @@ name: "Reviews",
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background: #031E26;
+  background: #031e26;
 }
 
 .centeringDiv {
@@ -130,8 +151,8 @@ name: "Reviews",
 }
 
 .btn {
-  background: #FFFFFF;
-  border: 1px solid #2E595E;
+  background: #ffffff;
+  border: 1px solid #2e595e;
   width: 264px;
   height: 43px;
 }
@@ -194,11 +215,11 @@ name: "Reviews",
 
 .textClassAdd {
   margin-top: -107px;
-  font-size: 36px
+  font-size: 36px;
 }
 
 .pStream {
-  font-family: 'Streamster(RUS BY LYAJKA)', sans-serif;
+  font-family: "Streamster(RUS BY LYAJKA)", sans-serif;
   font-size: 24px;
   margin: 0;
   margin-top: 10px;
@@ -214,7 +235,7 @@ name: "Reviews",
 .pSale {
   font-family: archivo, sans-serif;
   font-size: 18px;
-  margin: 0
+  margin: 0;
 }
 
 input {
