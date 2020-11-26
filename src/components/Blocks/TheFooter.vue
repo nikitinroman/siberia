@@ -2,7 +2,7 @@
   <div class="mainDiv">
     <div class="contentDiv">
       <div class="innerDiv">
-        <p style="font-family: 'Streamster(RUS BY LYAJKA)'; font-size: 40px">Сибирь есть. Она неизвестная. Она настоящая!</p>
+        <p class="pPoster">Сибирь есть. Она неизвестная. Она настоящая!</p>
         <button>Подобрать тур</button>
       </div>
       <div class="linksDiv">
@@ -19,10 +19,10 @@
           <a style="width: 130px" href="#Вопросы и ответы">Вопросы и ответы</a>
         </div>
         <div class="smallDiv" style="margin-top: -18px">
-          <p style="margin: 0; color: #FFFFFF">Подпишитесь на наши обновления</p>
+          <p class="pRenewal">Подпишитесь на наши обновления</p>
           <div>
             <input type="text" placeholder="Email">
-            <button style="height: 47px;width: 90px; box-shadow: none; margin-top: 0px">Клац :)</button>
+            <button class="buttonRenewal">Клац :)</button>
           </div>
         </div>
       </div>
@@ -37,20 +37,22 @@ name: "Footer"
 </script>
 
 <style scoped>
-.mainDiv{
+.mainDiv {
   background-image: url("/FooterForest.jpg");
   height: 60vh;
   background-size: cover;
   background-position: center;
 }
-.contentDiv{
+
+.contentDiv {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 }
-button{
+
+button {
   width: 258px;
   height: 47px;
   background: #777777;
@@ -58,33 +60,55 @@ button{
   color: #FFFFFF;
   font-size: 18px;
 }
-.innerDiv{
+
+.innerDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: white;
 }
-a{
+
+a {
   text-decoration: none;
   color: #FFFFFF;
   width: 100px
 }
-.linksDiv{
+
+.linksDiv {
   display: flex;
   width: 100%;
   margin-bottom: 25px;
   margin-top: 30px;
   justify-content: space-around;
 }
-.smallDiv{
+
+.smallDiv {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
 }
-input{
+
+input {
   height: 41px;
   width: 285px;
+}
+
+.pPoster {
+  font-family: 'Streamster(RUS BY LYAJKA)';
+  font-size: 40px
+}
+
+.pRenewal {
+  margin: 0;
+  color: #FFFFFF
+}
+
+.buttonRenewal {
+  height: 47px;
+  width: 90px;
+  box-shadow: none;
+  margin-top: 0
 }
 </style>

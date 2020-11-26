@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-import Home from "@/components/Home";
-import AboutTour from "@/components/AboutTour";
+import Home from "@/./pages/Home";
+import AboutTour from "@/./pages/AboutTour";
 
 Vue.use(VueRouter)
 

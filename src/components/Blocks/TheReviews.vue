@@ -2,7 +2,7 @@
   <div class="mainDiv">
     <div class="centeringDiv">
       <p class="textClass" >Отзывы путешественников</p>
-      <p class="textClass" style="margin-top: -107px; font-size: 36px">Отзывы путешественников</p>
+      <p class="textClass textClassAdd">Отзывы путешественников</p>
     </div>
     <div class="middleDiv">
         <Slider :slider-items="listOfReviews" :transform="25">
@@ -12,10 +12,10 @@
               <img height="200px" class="imgSlider" :src=item.img alt="photo">
             </div>
             <div>
-              <p class="sliderItemTitle" style="font-family: 'Streamster(RUS BY LYAJKA)'; font-size: 24px; margin: 0">{{item.id}}{{item.name}}</p>
+              <p class="sliderItemTitle pStream">{{ item.id }}{{ item.name }}</p>
             </div>
             <div >
-              <p class="sliderItemContent" style="font-family: archivo; font-size: 14px; margin: 14px">{{item.content}}</p>
+              <p class="sliderItemContent pArch">{{ item.content }}</p>
             </div>
             </div>
           </template>
@@ -25,9 +25,9 @@
       <button class="btn">
         <p>Все отзывы</p>
       </button>
-      <p style="font-family: archivo; font-size: 18px; margin: 0">Получи скидку 20% на свой первый тур прямо сейчас!</p>
+      <p class="pSale">Получи скидку 20% на свой первый тур прямо сейчас!</p>
       <div class="formDiv">
-        <input style="height: 40px; width: 285px;" type="text" placeholder="E-mail">
+        <input type="text" placeholder="E-mail">
         <button class="submitButton">Отправить</button>
       </div>
     </div>
@@ -96,21 +96,21 @@ name: "Reviews",
   },
   components:{
     Slider,
-
   }
 }
 </script>
 
 <style scoped>
-.mainDiv{
-  margin-top: 70px;
+.mainDiv {
+  margin-top: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   background: #031E26;
 }
-.centeringDiv{
+
+.centeringDiv {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -118,66 +118,107 @@ name: "Reviews",
   width: 100%;
   height: 142.5px;
 }
-.innerSliderDiv{
+
+.innerSliderDiv {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
   background-color: white;
   height: 100%;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.55)
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55);
 }
-.btn{
+
+.btn {
   background: #FFFFFF;
   border: 1px solid #2E595E;
   width: 264px;
   height: 43px;
 }
-.textClass{
-  font-family: archivo;
+
+.textClass {
+  font-family: archivo, sans-serif;
   font-size: 64px;
   color: rgba(255, 255, 255, 0.15);
 }
-.middleDiv{
+
+.middleDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   width: 100%;
 }
-.imgDiv{
+
+.imgDiv {
   margin-top: 18px;
   width: 85%;
   overflow: hidden;
 }
-.imgSlider{
+
+.imgSlider {
   height: 300px;
   width: 100%;
   transition: 0.5s;
 }
-.sliderItemTitle{
-  margin: 5px 0 0 0;
+
+.sliderItemTitle {
   text-align: center;
   font-size: 27px;
 }
-.sliderItemContent{
+
+.sliderItemContent {
   text-align: center;
 }
-.formDiv{
+
+.formDiv {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.submitButton{
+
+.submitButton {
   height: 46px;
   width: 90px;
   background: #777777;
 }
-.imgSlider{
+
+.imgSlider {
   width: 100%;
   transition: 0.5s;
 }
-.imgSlider:hover{
+
+.imgSlider:hover {
   transform: scale(1.15);
+}
+
+.textClassAdd {
+  margin-top: -107px;
+  font-size: 36px
+}
+
+.pStream {
+  font-family: 'Streamster(RUS BY LYAJKA)', sans-serif;
+  font-size: 24px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.pArch {
+  font-family: archivo, sans-serif;
+  font-size: 14px;
+  margin: 14px;
+  margin-top: 10px;
+}
+
+.pSale {
+  font-family: archivo, sans-serif;
+  font-size: 18px;
+  margin: 0
+}
+
+input {
+  height: 40px;
+  width: 285px;
 }
 </style>

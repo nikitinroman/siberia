@@ -1,24 +1,24 @@
 <template>
   <div class="mainDiv">
     <div class="pDiv">
-      <p style="color: rgba(46, 89, 94, 0.15); font-size: 64px; margin: 0; font-family: archivo">Фото и видео</p>
-      <p style="color: rgba(46, 89, 94, 1); margin-top: -40px; font-size: 36px; font-family: archivo">Фото и видео</p>
+      <p class="pBig">Фото и видео</p>
+      <p class="pSmall">Фото и видео</p>
     </div>
     <div class="underSliderGrid">
       <div></div>
       <Slider :slider-items="sliderItems" :quantity="quantity" :transform="100">
         <template v-slot="{item}">
           <div class="gridDiv">
-            <div>
+            <div class="picorvid">
               <img :src="item.content[0]" alt="photo">
             </div>
-            <div>
+            <div class="picorvid">
               <iframe width="100%" height="100%" :src="item.content[1]" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div>
+            <div class="picorvid">
               <img :src="item.content[2]" alt="photo">
             </div>
-            <div>
+            <div class="picorvid">
               <img :src="item.content[3]" alt="photo">
             </div>
           </div>
@@ -31,6 +31,7 @@
 
 <script>
 import Slider from "@/components/Slider";
+
 export default {
 name: "PhotoVideo",
   data(){
@@ -90,30 +91,34 @@ name: "PhotoVideo",
     ]
   }
   },
-  components:{
-  Slider
+  components: {
+    Slider
   }
 }
 </script>
 
 <style scoped>
-.mainDiv{
+
+.mainDiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   background-image: url("/Baikal.jpg");
-  background-position: left center;
+  background-position: 0% 73%;
   background-repeat: no-repeat;
-  filter: blur(2.5px);
+  background-size: 100%;
 }
-.pDiv{
+
+.pDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 40px;
 }
-.gridDiv{
+
+.gridDiv {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
@@ -121,12 +126,33 @@ name: "PhotoVideo",
   width: 100%;
   margin-left: -100%;
 }
-img{
+
+img {
   width: 100%;
   height: 100%;
 }
-.underSliderGrid{
+
+.underSliderGrid {
   display: grid;
   grid-template-columns: 25% 50% 25%;
+}
+
+.pBig {
+  color: rgba(46, 89, 94, 0.15);
+  font-size: 64px;
+  margin: 0;
+  font-family: archivo
+}
+
+.pSmall {
+  color: rgba(46, 89, 94, 1);
+  margin-top: -40px;
+  font-size: 36px;
+  font-family: archivo
+}
+
+.picorvid {
+  background-color: #FFFFFF;
+  margin: 5px;
 }
 </style>

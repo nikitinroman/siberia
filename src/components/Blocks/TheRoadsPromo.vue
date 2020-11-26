@@ -10,7 +10,7 @@
         <template v-slot="{item}">
           <div class="innerSliderDiv">
             <router-link :to="'/AboutTour/' + item.id + '/' + item.title" :key="item.id" class="imgDiv" tag="div">
-              <img height="200px" class="imgSlider" :src="item.img" alt="cat">
+              <img height="260px" class="imgSlider" :src="item.img" alt="cat">
             </router-link>
             <div>
               <p class="sliderItemTitle">{{ item.title }}</p>
@@ -18,14 +18,14 @@
             <div style="width: 100%">
               <p class="sliderItemContent">{{ item.content }}</p>
             </div>
-            <div style="height: 1px; width: 58%; border-top: 1px solid cornflowerblue"></div>
+            <div class="blueline"></div>
             <div>
               <p>Сложность</p>
             </div>
             <div class="duckDiv">
               <div v-for="val in 5" :key="val">
-                <blackduck v-if="val <= item.level"></blackduck>
-                <greyduck v-else></greyduck>
+                <img v-if="val <= item.level" src="/images/icons/blackDuck.svg" alt="Иконка Черной утки"/>
+                <img v-else src="/images/icons/greyDuck.svg" alt="Иконка Серой утки"/>
               </div>
             </div>
           </div>
@@ -71,8 +71,6 @@
 
 <script>
 import Slider from "@/components/Slider";
-import blackduck from "@/components/svgComponents/BlackDuck";
-import greyduck from "@/components/svgComponents/GreyDuck";
 
 export default {
   name: "RoadsPromo",
@@ -135,9 +133,6 @@ export default {
   },
   components: {
     Slider,
-    blackduck,
-    greyduck,
-
   }
 }
 </script>
@@ -212,43 +207,58 @@ select:focus {
   background-color: #2E595E;
   color: white;
 }
-.imgSlider{
+
+.imgSlider {
   width: 100%;
   transition: 0.5s;
 }
-.imgSlider:hover{
+
+.imgSlider:hover {
   transform: scale(1.15);
 }
-.innerSliderDiv{
+
+.innerSliderDiv {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
   background-color: white;
   height: 100%;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.55)
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55)
 }
-.sliderItemTitle{
-  font-family: streamster;
-  margin: 5px 0 0 0;
+
+.sliderItemTitle {
+  font-family: streamster, archivo, sans-serif;
   text-align: center;
   font-size: 27px;
+  margin-top: 15px;
 }
-.sliderItemContent{
+
+.sliderItemContent {
   margin-left: 20%;
   margin-right: 20%;
   text-align: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
-.duckDiv{
+
+.duckDiv {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-bottom: 10px;
+  margin-top: 8px;
 }
-.imgDiv{
+
+.imgDiv {
   margin-top: 18px;
   width: 85%;
-  height: 200px;
+  height: 260px;
   overflow: hidden;
+}
+.blueline{
+  height: 1px;
+  width: 58%;
+  border-top: 1px solid rgba(124, 165, 202, 1);
 }
 </style>

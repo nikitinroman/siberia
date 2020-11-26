@@ -2,3 +2,13 @@
     font-family: grey;
     src: url(../fonts/GREY.ttf) format("truetype");
 }
+
+@font-face {
+    font-family: archivo;
+    src: url(../fonts/Archivo-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: streamster;
+    src: url(../fonts/Streamster.otf) format("opentype");
+}

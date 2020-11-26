@@ -1,8 +1,8 @@
 <template>
   <div style="height: 100vh; width: 100%">
     <div class="topDiv">
-      <p style="color: rgba(255, 255, 255, 0.25); font-family: archivo; font-weight: bold; font-size: 64px; margin: 0">Программа тура</p>
-      <p style="color: white; font-family: archivo; font-weight: bold; font-size: 30px; margin-top: -30px">Программа тура</p>
+      <p class="pBig">Программа тура</p>
+      <p class="pSmall">Программа тура</p>
     </div>
     <div class="botDiv">
       <div class="mainDiv">
@@ -11,19 +11,24 @@
           <div class="titleDiv" style="justify-content: flex-start"><p style="font-size: 32px; font-family: streamster; margin: 0">День {{currentDay}}</p></div>
           <div><p style="font-family: archivo">{{otherContent[id].days[currentDay][0]}}</p></div>
           <div class="buttonDiv">
-            <button class="buttonStyle" v-on:click="currentDay -= 1" v-if="currentDay > 1"><p style="font-size: 18px; font-family: streamster; margin: 0">&#8592; День {{currentDay - 1}}</p></button>
-            <button class="buttonStyle" v-on:click="currentDay += 1" v-if="currentDay < Object.keys(otherContent[id].days).length"><p style="font-size: 18px; font-family: streamster; margin: 0">День {{currentDay + 1}} &#8594;</p></button>
+            <button class="buttonStyle" v-on:click="currentDay -= 1" v-if="currentDay > 1"><p
+                style="font-size: 18px; font-family: streamster; margin: 0">&#8592; День {{ currentDay - 1 }}</p>
+            </button>
+            <button class="buttonStyle" v-on:click="currentDay += 1"
+                    v-if="currentDay < Object.keys(otherContent[id].days).length"><p
+                style="font-size: 18px; font-family: streamster; margin: 0">День {{ currentDay + 1 }} &#8594;</p>
+            </button>
           </div>
         </div>
         <div class="rightDiv">
-          <img style="align-self: center; max-height: 220px" width="100%" :src="otherContent[id].pictures[currentDay - 1]" alt="Дикпик">
-          <div class="titleDiv"><p style="font-family: archivo; font-size: 24px; margin: 0">{{tour}}</p></div>
-          <div><p style="font-family: archivo">{{otherContent[id].underPicContent[currentDay - 1]}}</p></div>
+          <img class="imgClass" :src="otherContent[id].pictures[currentDay - 1]" alt="Дикпик">
+          <div class="titleDiv"><p style="font-family: archivo; font-size: 24px; margin: 0">{{ tour }}</p></div>
+          <div><p style="font-family: archivo">{{ otherContent[id].underPicContent[currentDay - 1] }}</p></div>
         </div>
         <div></div>
       </div>
-      <div style="display: flex; justify-content: center; align-items: center">
-        <button class="buttonStyle" style="width: 250px; height: 43px; border: 1px solid #7CA5CA; filter: drop-shadow(0px 0px 3px #1A456C);">Подробнее</button>
+      <div class="buttonBot">
+        <button class="buttonStyle addButton">Подробнее</button>
       </div>
     </div>
   </div>
@@ -162,25 +167,65 @@ export default {
   border: 1px solid steelblue;
   /*border-image-source: linear-gradient(180deg, #7CA5CA 0%, rgba(124, 165, 202, 0) 100%);*/
 }
-.titleDiv{
+
+.titleDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.buttonDiv{
+
+.buttonDiv {
   display: flex;
   justify-content: space-around;
   width: 50%;
 }
-.buttonStyle{
+
+.buttonStyle {
   background: transparent;
   transition: 0.5s;
 }
-.buttonStyle:hover{
+
+.buttonStyle:hover {
   background-color: cadetblue;
 }
-.buttonStyle:focus{
+
+.buttonStyle:focus {
   outline: none;
+}
+
+.pBig {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: archivo;
+  font-weight: bold;
+  font-size: 64px;
+  margin: 0
+}
+
+.pSmall {
+  color: white;
+  font-family: archivo;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -30px
+}
+
+.imgClass {
+  align-self: center;
+  max-height: 220px;
+  width: 100%
+}
+
+.buttonBot {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.addButton {
+  width: 250px;
+  height: 43px;
+  border: 1px solid #7CA5CA;
+  filter: drop-shadow(0px 0px 3px #1A456C);
 }
 </style>
