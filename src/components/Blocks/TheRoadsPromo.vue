@@ -6,11 +6,14 @@
         <p class="bigP">Маршруты</p>
         <p class="smallP">Маршруты</p>
       </div>
-      <Slider :slider-items="sliderItems" :transform="25">
+      <Slider
+        :slider-items="sliderItems"
+        :photo-video="false"
+      >
         <template v-slot="{ item }">
           <div class="innerSliderDiv">
             <router-link
-              :to="'/AboutTour/' + item.id + '/' + item.title"
+              :to="{name: 'AboutTour', params: {tourLocation: item.location, id:item.id, tour: item.title}}"
               :key="item.id"
               class="imgDiv"
               tag="div"
@@ -49,10 +52,8 @@
           Все маршруты
         </button>
       </div>
-      <div
-        style="display: flex; justify-content: space-around; width: 70%; align-items: center"
-      >
-        <div>
+      <div class="footer">
+        <div class="select-container">
           <label for="select1">Желаемая дата</label>
           <div id="select1" class="listRoads">
             <select v-model="chosenDate">
@@ -65,7 +66,7 @@
             </select>
           </div>
         </div>
-        <div>
+        <div class="select-container">
           <label for="select2">Количество дней</label>
           <div id="select2" class="listRoads">
             <select v-model="chosenDays">
@@ -73,7 +74,7 @@
             </select>
           </div>
         </div>
-        <div>
+        <div class="select-container">
           <label for="select3">Тип маршрута</label>
           <div id="select3" class="listRoads">
             <select v-model="chosenType">
@@ -81,10 +82,10 @@
             </select>
           </div>
         </div>
-        <div>
+        <div class="select-container">
           <button
             class="btnClass"
-            style="background-color: #777777; color: white; height: 62px; margin-top: 18px"
+            style="background-color: #777777; color: white; height: 62px; margin-top: 18px; width: 100%"
           >
             Подобрать тур
           </button>
@@ -101,7 +102,8 @@ export default {
   name: "RoadsPromo",
   data() {
     return {
-      transform: 0,
+      transform: 33.333,
+      quantity: 3,
       transition: false,
       chosenDate: 0,
       chosenDays: 0,
@@ -131,6 +133,7 @@ export default {
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
           title: "Плато Путорана",
           content: "Под полярным небом",
+          location: 1497337,
           level: 4
         },
         {
@@ -140,6 +143,7 @@ export default {
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
           title: "Байкал",
           content: "Пять дней по льду Байкала (с размещением на базах)",
+          location: 2020744,
           level: 2
         },
         {
@@ -149,6 +153,7 @@ export default {
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
           title: "Ленские столбы",
           content: "Путешествие к Ленским и Синским столбам в Якутии",
+          location: 2017824,
           level: 3
         },
         {
@@ -158,6 +163,7 @@ export default {
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
           title: "Плато Путорана",
           content: "Под полярным небом",
+          location: 1497337,
           level: 4
         },
         {
@@ -167,6 +173,7 @@ export default {
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
           title: "Байкал",
           content: "Пять дней по льду Байкала (с размещением на базах)",
+          location: 2020744,
           level: 2
         }
       ]
@@ -228,7 +235,6 @@ export default {
   align-items: center;
   justify-content: center;
   border: 4px solid #2e595e;
-  width: 217px;
   height: 45px;
 }
 
@@ -308,5 +314,30 @@ select:focus {
   height: 1px;
   width: 58%;
   border-top: 1px solid rgba(124, 165, 202, 1);
+}
+.select-container {
+  width: 200px;
+  margin: 2px 5px;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media screen and (max-width: 720px) {
+  .bigP {
+    display: none;
+  }
+  .smallP {
+    margin: 0;
+  }
+  .btnClass {
+    margin-top: 5px;
+  }
+  .listRoads {
+    height: 35px;
+  }
 }
 </style>

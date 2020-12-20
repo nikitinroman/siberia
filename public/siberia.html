@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="http://localhost:8080/favicon.ico">
+    <title>siberia</title>
+  <link href="./siberia_files/app.js.Без названия" rel="preload" as="script"><link href="./siberia_files/chunk-vendors.js.Без названия" rel="preload" as="script"><style type="text/css">/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+	line-height: 1;
+}
+menu, ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+</style><style type="text/css">@font-face {
+    font-family: grey;
+    src: url(/fonts/GREY.9305c781.ttf) format("truetype");
+}
+@font-face {
+    font-family: archivo;
+    src: url(/fonts/Archivo-Regular.4b36aaa8.ttf) format("truetype");
+}
+@font-face {
+    font-family: streamster;
+    src: url(/fonts/Streamster.664debec.otf) format("opentype");
+}
+</style><style type="text/css">
+html {
+  scroll-behavior: smooth;
+}
+</style><style type="text/css">
+.mainDiv[data-v-2ab7ef13] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  background-image: url("/forest-river.jpg");
+}
+.headerDiv[data-v-2ab7ef13] {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.askAnswersDiv[data-v-2ab7ef13] {
+  display: flex;
+  justify-content: space-around;
+}
+.asksDiv[data-v-2ab7ef13] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.askDiv[data-v-2ab7ef13] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 85%;
+  padding-left: 6px;
+  height: 50px;
+}
+.askDiv[data-v-2ab7ef13]:hover {
+  background-color: #7aa5aa;
+  color: #ffffff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.askDiv.active[data-v-2ab7ef13] {
+  background-color: #7aa5aa;
+  color: #ffffff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
+}
+.rightDiv[data-v-2ab7ef13] {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  border: 1px solid deepskyblue;
+  /*border-image-source: linear-gradient(180deg, #7CA5CA 0%, rgba(124, 165, 202, 0) 100%);*/
+}
+.pBig[data-v-2ab7ef13] {
+  color: rgba(46, 89, 94, 0.15);
+  font-family: archivo, sans-serif;
+  font-size: 64px;
+  margin: 0;
+}
+.pSmall[data-v-2ab7ef13] {
+  margin: 0;
+  color: #2e595e;
+  font-family: archivo, sans-serif;
+  font-size: 48px;
+  margin-top: -45px;
+  margin-bottom: 30px;
+}
+.pAsk[data-v-2ab7ef13] {
+  font-size: 18px;
+  font-family: archivo, sans-serif;
+}
+.divAsk[data-v-2ab7ef13] {
+  width: 90%;
+  margin-left: 2%;
+}
+.divWithAsk[data-v-2ab7ef13] {
+  background: linear-gradient(180deg, #7aa5aa 0%, rgba(122, 165, 170, 0) 100%);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.pWithAsk[data-v-2ab7ef13] {
+  font-size: 22px;
+  font-family: archivo, sans-serif;
+  margin: 0 12px;
+}
+.divWithAnswer[data-v-2ab7ef13] {
+  height: 1px;
+  border-top: 1px solid #7ca5ca;
+  width: 70%;
+}
+.pWithAnswer[data-v-2ab7ef13] {
+  width: 85%;
+  font-size: 18px;
+  font-family: archivo, sans-serif;
+  margin-left: 4%;
+  margin-top: 20px;
+}
+.visibleBlock[data-v-2ab7ef13]{
+  display: none;
+}
+.invisibleBlock[data-v-2ab7ef13]{
+  display: none;
+}
+.btn-back[data-v-2ab7ef13]{
+  background: transparent;
+  transition: 0.5s;
+  width: 120px;
+  height: 30px;
+  border: 1px solid #7ca5ca;
+  filter: drop-shadow(0px 0px 3px #1a456c);
+  margin-bottom: 10px;
+}
+.btn-back[data-v-2ab7ef13]:hover {
+  background-color: cadetblue;
+}
+.btn-back[data-v-2ab7ef13]:focus {
+  outline: none;
+}
+@media screen and (max-width: 800px) {
+.pBig[data-v-2ab7ef13]{
+    display: none;
+}
+.pSmall[data-v-2ab7ef13]{
+    margin: 10px 0;
+}
+.rightDiv[data-v-2ab7ef13]{
+    max-width: 70%;
+}
+}
+</style><style type="text/css">
+.ownerDiv[data-v-2dedc691] {
+  overflow: hidden;
+  display: flex;
+  margin: auto;
+}
+.mainSliderUl3[data-v-2dedc691] {
+  display: flex;
+  margin-left: -33.333%;
+  width: 100%;
+}
+.mainSliderUl2[data-v-2dedc691] {
+  display: flex;
+  margin-left: -50%;
+}
+.mainSliderUl1[data-v-2dedc691] {
+  display: flex;
+  margin-left: -100%;
+}
+.innerSliderLi3[data-v-2dedc691] {
+  height: 99%;
+  width: 33.33%;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+.innerSliderLi2[data-v-2dedc691] {
+  width: 50%;
+}
+.innerSliderLi1[data-v-2dedc691] {
+  width: 100%;
+}
+li[data-v-2dedc691] {
+  list-style: none;
+  flex: none;
+}
+ul[data-v-2dedc691] {
+  padding: 0;
+}
+.btnClass[data-v-2dedc691] {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 50%;
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+}
+.btnClass[data-v-2dedc691]:hover {
+  cursor: pointer;
+}
+.transDiv[data-v-2dedc691] {
+  transition: 0.5s;
+}
+.mainDiv3[data-v-2dedc691] {
+  align-self: center;
+  position: relative;
+  width: 70%;
+}
+</style><style type="text/css">
+.mainDiv[data-v-da02f8fe] {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("/Baikal.jpg");
+  background-position: 0 73%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 20px;
+}
+.pDiv[data-v-da02f8fe] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.gridDiv[data-v-da02f8fe] {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  height: 50vh;
+  width: 100%;
+  margin-left: -100%;
+}
+img[data-v-da02f8fe] {
+  width: 100%;
+  height: 100%;
+}
+.underSliderGrid[data-v-da02f8fe] {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.pBig[data-v-da02f8fe] {
+  color: rgba(46, 89, 94, 0.15);
+  font-size: 64px;
+  margin: 0;
+  font-family: archivo, sans-serif;
+}
+.pSmall[data-v-da02f8fe] {
+  color: rgba(46, 89, 94, 1);
+  margin-top: -40px;
+  font-size: 36px;
+  font-family: archivo, sans-serif;
+}
+.picorvid[data-v-da02f8fe] {
+  background-color: #ffffff;
+  margin: 5px;
+}
+@media screen and (max-width: 500px) {
+.pBig[data-v-da02f8fe]{
+    display: none;
+}
+.pSmall[data-v-da02f8fe]{
+    margin: 0;
+}
+}
+</style><style type="text/css">
+.mainDiv[data-v-744e1c14] {
+  height: 100vh;
+}
+.absDiv[data-v-744e1c14] {
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  background-color: rgb(3, 30, 38);
+}
+.contentDiv[data-v-744e1c14] {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.bigP[data-v-744e1c14] {
+  color: white;
+  opacity: 0.15;
+  font-size: 96px;
+  margin: 0;
+}
+.smallP[data-v-744e1c14] {
+  color: white;
+  font-size: 40px;
+  margin-top: -40px;
+  margin-bottom: 0;
+}
+.btnClass[data-v-744e1c14] {
+  width: 217px;
+  height: 52px;
+  background-color: white;
+  border: 1px solid #2e595e;
+  transition: 0.5s;
+  font-size: 18px;
+}
+.listRoads[data-v-744e1c14] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #2e595e;
+  height: 45px;
+}
+.btnClass[data-v-744e1c14]:hover {
+  background-color: #777777;
+  cursor: pointer;
+}
+select[data-v-744e1c14] {
+  border: none;
+  width: 80%;
+}
+select[data-v-744e1c14]:hover {
+  cursor: pointer;
+}
+select[data-v-744e1c14]:focus {
+  outline: none;
+  width: 100%;
+  height: 100%;
+  background-color: #2e595e;
+  color: white;
+}
+.imgSlider[data-v-744e1c14] {
+  width: 100%;
+  transition: 0.5s;
+}
+.imgSlider[data-v-744e1c14]:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+.innerSliderDiv[data-v-744e1c14] {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55);
+}
+.sliderItemTitle[data-v-744e1c14] {
+  font-family: streamster, archivo, sans-serif;
+  text-align: center;
+  font-size: 27px;
+  margin-top: 15px;
+}
+.sliderItemContent[data-v-744e1c14] {
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.duckDiv[data-v-744e1c14] {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 8px;
+}
+.imgDiv[data-v-744e1c14] {
+  margin-top: 18px;
+  width: 85%;
+  height: 260px;
+  overflow: hidden;
+}
+.blueline[data-v-744e1c14] {
+  height: 1px;
+  width: 58%;
+  border-top: 1px solid rgba(124, 165, 202, 1);
+}
+.select-container[data-v-744e1c14] {
+  width: 200px;
+  margin: 2px 5px;
+}
+.footer[data-v-744e1c14] {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media screen and (max-width: 720px) {
+.bigP[data-v-744e1c14] {
+    display: none;
+}
+.smallP[data-v-744e1c14] {
+    margin: 0;
+}
+.btnClass[data-v-744e1c14] {
+    margin-top: 5px;
+}
+.listRoads[data-v-744e1c14] {
+    height: 35px;
+}
+}
+</style><style type="text/css">
+.pictureDiv[data-v-567e2429] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+}
+a[data-v-567e2429] {
+  text-decoration: none;
+  color: white;
+}
+.mainDiv[data-v-567e2429] {
+  background-image: url("/siberia.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.topDiv[data-v-567e2429] {
+  display: flex;
+  justify-content: flex-start;
+}
+.languageDiv[data-v-567e2429] {
+  color: white;
+  text-decoration: underline;
+  margin-left: 13.5%;
+}
+.languageDiv[data-v-567e2429]:hover {
+  cursor: pointer;
+}
+.botDiv[data-v-567e2429] {
+  display: flex;
+  justify-content: space-around;
+}
+.linksDiv[data-v-567e2429] {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+.anchorDiv[data-v-567e2429] {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+@media screen and (max-width: 600px) {
+.anchorDiv[data-v-567e2429] {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+}
+</style><style type="text/css">
+.mainDiv[data-v-7d7c6933] {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background: #031e26;
+}
+.centeringDiv[data-v-7d7c6933] {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 142.5px;
+}
+.innerSliderDiv[data-v-7d7c6933] {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55);
+}
+.btn[data-v-7d7c6933] {
+  background: #ffffff;
+  border: 1px solid #2e595e;
+  width: 264px;
+  height: 43px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.btn[data-v-7d7c6933]:hover {
+  cursor: pointer;
+}
+.textClass[data-v-7d7c6933] {
+  font-family: archivo, sans-serif;
+  font-size: 64px;
+  color: rgba(255, 255, 255, 0.15);
+}
+.middleDiv[data-v-7d7c6933] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+}
+.imgDiv[data-v-7d7c6933] {
+  margin-top: 18px;
+  width: 85%;
+  overflow: hidden;
+}
+.imgSlider[data-v-7d7c6933] {
+  height: 300px;
+  width: 100%;
+  transition: 0.5s;
+}
+.sliderItemTitle[data-v-7d7c6933] {
+  text-align: center;
+  font-size: 27px;
+}
+.sliderItemContent[data-v-7d7c6933] {
+  text-align: center;
+}
+.formDiv[data-v-7d7c6933] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submitButton[data-v-7d7c6933] {
+  height: 46px;
+  width: 90px;
+  background: #777777;
+}
+.submitButton[data-v-7d7c6933]:hover {
+  cursor: pointer;
+}
+.imgSlider[data-v-7d7c6933] {
+  width: 100%;
+  transition: 0.5s;
+}
+.imgSlider[data-v-7d7c6933]:hover {
+  transform: scale(1.15);
+}
+.textClassAdd[data-v-7d7c6933] {
+  margin-top: -107px;
+  font-size: 36px;
+  font-family: archivo, sans-serif;
+  color: rgba(255, 255, 255, 0.15);
+}
+.pStream[data-v-7d7c6933] {
+  font-family: "Streamster(RUS BY LYAJKA)", sans-serif;
+  font-size: 24px;
+  margin: 0;
+  margin-top: 10px;
+}
+.pArch[data-v-7d7c6933] {
+  font-family: archivo, sans-serif;
+  font-size: 14px;
+  margin: 14px;
+  margin-top: 10px;
+}
+.pSale[data-v-7d7c6933] {
+  font-family: archivo, sans-serif;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+input[data-v-7d7c6933] {
+  height: 40px;
+  width: 285px;
+}
+@media screen and (max-width: 850px) {
+.textClassAdd[data-v-7d7c6933]{
+    margin: 0;
+}
+.textClass[data-v-7d7c6933]{
+    display: none;
+}
+}
+@media screen and (max-width: 500px) {
+.textClassAdd[data-v-7d7c6933]{
+    font-size: 25px;
+}
+input[data-v-7d7c6933]{
+    width: 200px;
+}
+}
+</style><style type="text/css">
+.textDouble[data-v-6d97fc23] {
+  width: 100%;
+  font-size: 50px;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+}
+.textBack[data-v-6d97fc23] {
+  font-size: 63px;
+  opacity: 0.5;
+  font-family: streamster, sans-serif;
+}
+.textFront[data-v-6d97fc23] {
+  margin-top: -35px;
+  font-family: streamster, sans-serif;
+}
+p[data-v-6d97fc23] {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+.btnClass[data-v-6d97fc23] {
+  width: 264px;
+  height: 43px;
+  background-color: white;
+  border: 1px solid black;
+  transition: 0.5s;
+}
+.btnClass[data-v-6d97fc23]:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+.mainDiv[data-v-6d97fc23] {
+  height: auto;
+  background-color: rgb(3, 30, 38);
+}
+.headerInnerDiv[data-v-6d97fc23] {
+  display: flex;
+  height: 40vh;
+  flex-direction: column;
+  margin-left: 20%;
+  margin-right: 20%;
+  justify-content: space-around;
+}
+.divJournal[data-v-6d97fc23] {
+  text-align: right;
+  font-size: 25px;
+  color: white;
+  margin-right: 20px;
+  font-family: streamster, sans-serif;
+}
+.bluredImg[data-v-6d97fc23] {
+  filter: blur(2px) grayscale(100%);
+}
+.contentDiv[data-v-6d97fc23] {
+  display: flex;
+  height: 60vh;
+}
+.topDiv[data-v-6d97fc23] {
+  height: auto;
+  max-width: 20%;
+}
+.middleDiv[data-v-6d97fc23] {
+  border: 1px solid cornflowerblue;
+  top: -13px;
+  min-height: 53vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overflowDiv[data-v-6d97fc23] {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: content-box;
+}
+.infoaboutus[data-v-6d97fc23] {
+  font-family: archivo, sans-serif;
+  font-size: 14px;
+  line-height: 15px;
+  vertical-align: top;
+}
+.buttonPodr[data-v-6d97fc23] {
+  max-width: 80%;
+  margin-top: 20px;
+}
+.middlerightDiv[data-v-6d97fc23] {
+  height: auto;
+  max-width: 20%;
+  overflow: hidden;
+}
+.rightimg[data-v-6d97fc23] {
+  filter: blur(2px) grayscale(100%);
+  margin-left: -78px;
+  margin-top: -180px;
+}
+.about-us-phrase[data-v-6d97fc23]{
+  font-family: streamster,
+  sans-serif;
+  font-size: 70px
+}
+@media screen and (max-width: 700px) {
+.textBack[data-v-6d97fc23] {
+    display: none;
+    margin: 0;
+}
+.textFront[data-v-6d97fc23]{
+    margin: 0;
+    font-size: 28px;
+}
+.overflowDiv[data-v-6d97fc23]{
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+}
+@media screen and (max-width:540px) {
+.topDiv[data-v-6d97fc23]{
+    display: none;
+}
+.middlerightDiv[data-v-6d97fc23]{
+    display: none;
+}
+.about-us-phrase[data-v-6d97fc23]{
+    font-size: 32px;
+}
+}
+</style><style type="text/css">
+.mainDiv[data-v-6cc24a9a] {
+  background-image: url("/FooterForest.jpg");
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+}
+.contentDiv[data-v-6cc24a9a] {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+button[data-v-6cc24a9a] {
+  width: 258px;
+  height: 47px;
+  background: #777777;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 20px;
+}
+button[data-v-6cc24a9a]:hover {
+  cursor: pointer;
+}
+.innerDiv[data-v-6cc24a9a] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin-bottom: 10px;
+}
+a[data-v-6cc24a9a] {
+  text-decoration: none;
+  color: #ffffff;
+  width: 100px;
+}
+.linksDiv[data-v-6cc24a9a] {
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+.smallDiv[data-v-6cc24a9a] {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+input[data-v-6cc24a9a] {
+  height: 41px;
+  width: 285px;
+}
+.pPoster[data-v-6cc24a9a] {
+  font-family: "Streamster(RUS BY LYAJKA)", archivo, sans-serif;
+  font-size: 40px;
+}
+.pRenewal[data-v-6cc24a9a] {
+  margin: 0;
+  color: #ffffff;
+}
+.buttonRenewal[data-v-6cc24a9a] {
+  height: 43px;
+  width: 90px;
+  box-shadow: none;
+}
+.buttonRenewal[data-v-6cc24a9a]:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 700px){
+.linksDiv[data-v-6cc24a9a]{
+    flex-wrap: wrap;
+}
+.email-btn[data-v-6cc24a9a]{
+    margin-top: 25px  ;
+}
+.pPoster[data-v-6cc24a9a]{
+    color: #777777;
+    font-size: 30px;
+}
+}
+</style><style type="text/css">
+.mainDiv[data-v-4d0d7e6b] {
+  position: relative;
+}
+.backgroundDiv[data-v-4d0d7e6b] {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.pBig[data-v-4d0d7e6b] {
+  font-size: 64px;
+  opacity: 0.2;
+  font-family: archivo, sans-serif;
+}
+.pSmall[data-v-4d0d7e6b] {
+  font-size: 36px;
+  margin-top: -35px;
+  font-family: archivo, sans-serif;
+}
+.pictureDiv[data-v-4d0d7e6b] {
+  overflow: hidden;
+  width: 100%;
+  height: 25%;
+}
+.imgStyle[data-v-4d0d7e6b] {
+  filter: blur(4px) grayscale(100%);
+}
+.botDiv[data-v-4d0d7e6b] {
+  display: flex;
+  justify-content: space-around;
+}
+.botP[data-v-4d0d7e6b] {
+  font-family: streamster, sans-serif;
+  font-size: 48px;
+}
+.absDiv[data-v-4d0d7e6b] {
+  position: absolute;
+  width: 240px;
+  height: 270px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55);
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.addDivClass[data-v-4d0d7e6b] {
+  top: 5%;
+  left: 47%;
+}
+.innerDiv[data-v-4d0d7e6b] {
+  width: 90%;
+  height: 90%;
+  background-color: #777777;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.marshType[data-v-4d0d7e6b] {
+  font-family: streamster, sans-serif;
+  font-size: 48px;
+  margin: 0;
+  color: white;
+  margin-bottom: 8px;
+}
+.marshList[data-v-4d0d7e6b] {
+  width: 70%;
+  display: flex;
+}
+.pTypes[data-v-4d0d7e6b] {
+  margin: 0 0 12px 0;
+  text-align: start;
+  color: white;
+}
+.center-of-page-block[data-v-4d0d7e6b]{
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container-abs[data-v-4d0d7e6b]{
+  height: 300px;
+  width: 450px;
+}
+@media screen and (max-width:540px) {
+.mainDiv[data-v-4d0d7e6b]{
+    margin-top: 100px;
+}
+.backgroundDiv[data-v-4d0d7e6b]{
+    height: 80vh;
+}
+.botP[data-v-4d0d7e6b]{
+    font-size: 28px;
+}
+.container-abs[data-v-4d0d7e6b]{
+    display: flex;
+    justify-content: center;
+}
+.absDiv[data-v-4d0d7e6b]{
+    position: relative;
+    width: 170px;
+}
+.addDivClass[data-v-4d0d7e6b]{
+    left: 0;
+}
+.innerDiv[data-v-4d0d7e6b]{
+    width: 100%;
+}
+.pBig[data-v-4d0d7e6b]{
+    display: none;
+}
+.center-of-page-block[data-v-4d0d7e6b]{
+    top: 20%;
+}
+}
+</style><style type="text/css">
+.topDiv[data-v-b7ca91de] {
+  background-image: url("/darkForest.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.botDiv[data-v-b7ca91de] {
+  background-image: url("/brightForest.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.mainDiv[data-v-b7ca91de] {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 85%;
+}
+.leftDiv[data-v-b7ca91de] {
+  display: flex;
+  padding: 20px;
+  max-height: 70%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 30%;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid steelblue;
+  /*border-image-source: linear-gradient(180deg, #7CA5CA 0%, rgba(124, 165, 202, 0) 100%);*/
+}
+.rightDiv[data-v-b7ca91de] {
+  display: flex;
+  max-height: 450px;
+  padding: 1.4%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 45%;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid steelblue;
+  /*border-image-source: linear-gradient(180deg, #7CA5CA 0%, rgba(124, 165, 202, 0) 100%);*/
+}
+.titleDiv[data-v-b7ca91de] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.buttonDiv[data-v-b7ca91de] {
+  display: flex;
+  justify-content: space-around;
+}
+.buttonStyle[data-v-b7ca91de] {
+  background: transparent;
+  transition: 0.5s;
+}
+.buttonStyle[data-v-b7ca91de]:hover {
+  background-color: cadetblue;
+}
+.buttonStyle[data-v-b7ca91de]:focus {
+  outline: none;
+}
+.pBig[data-v-b7ca91de] {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: archivo, sans-serif;
+  font-weight: bold;
+  font-size: 64px;
+  margin: 0;
+}
+.pSmall[data-v-b7ca91de] {
+  color: white;
+  font-family: archivo, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -30px;
+}
+.imgClass[data-v-b7ca91de] {
+  align-self: center;
+  max-height: 220px;
+  width: 100%;
+}
+.buttonBot[data-v-b7ca91de] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addButton[data-v-b7ca91de] {
+  width: 250px;
+  height: 43px;
+  border: 1px solid #7ca5ca;
+  filter: drop-shadow(0px 0px 3px #1a456c);
+}
+button[data-v-b7ca91de]:hover {
+  cursor: pointer;
+}
+.pInButton[data-v-b7ca91de] {
+  font-size: 18px;
+  font-family: streamster, sans-serif;
+  margin: 0;
+}
+.currentDay[data-v-b7ca91de] {
+  font-size: 32px;
+  font-family: streamster, sans-serif;
+  margin: 0;
+}
+.tour[data-v-b7ca91de] {
+  font-family: archivo, sans-serif;
+  font-size: 24px;
+  margin: 0;
+}
+.weather[data-v-b7ca91de] {
+  position: absolute;
+  background: transparent;
+  border: 1px solid #7ca5ca;
+  width: 200px;
+  height: 100px;
+  top: 3%;
+  right: 19%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.temp[data-v-b7ca91de] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.wind-cloud[data-v-b7ca91de] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 630px) {
+.pInButton[data-v-b7ca91de]{
+    font-size: 15px;
+}
+.buttonBot[data-v-b7ca91de]{
+    margin-top: 20px;
+}
+.pBig[data-v-b7ca91de]{
+    display: none;
+}
+.pSmall[data-v-b7ca91de]{
+    margin: 10px 0;
+}
+}
+</style><script charset="utf-8" src="./siberia_files/app.ca9fbdf64ae61b801079.hot-update.js.Без названия"></script><script charset="utf-8" src="./siberia_files/app.8bc40c9d8d69c60a1c13.hot-update.js.Без названия"></script><script charset="utf-8" src="./siberia_files/app.c4d6419c4ac119c01df8.hot-update.js.Без названия"></script><script charset="utf-8" src="./siberia_files/app.26fc2d599fcb41a67e71.hot-update.js.Без названия"></script><script charset="utf-8" src="./siberia_files/app.e08194ef998e065f5ec9.hot-update.js.Без названия"></script><script charset="utf-8" src="./siberia_files/app.a88ac08d2cfb7023c56b.hot-update.js.Без названия"></script><script charset="utf-8" src="./siberia_files/app.58f6f7296b214a3b938f.hot-update.js.Без названия"></script></head>
+  <body>
+    <noscript>
+      <strong>We're sorry but siberia doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div><div><div data-v-567e2429="" class="mainDiv" id="Start"><div data-v-567e2429="" class="pictureDiv"><div data-v-567e2429="" class="topDiv"><div data-v-567e2429="" class="languageDiv"> Russian </div></div><div data-v-567e2429=""></div><div data-v-567e2429="" class="botDiv"><div data-v-567e2429="" class="linksDiv"><a data-v-567e2429="" href="https://ru-ru.facebook.com/"><img data-v-567e2429="" src="./siberia_files/facebook.svg" alt="Иконка Facebook"></a><a data-v-567e2429="" href="https://twitter.com/?lang=ru"><img data-v-567e2429="" src="./siberia_files/twitter.svg" alt="Иконка Twitter"></a><a data-v-567e2429="" href="https://vk.com/nikitin__roman"><img data-v-567e2429="" src="./siberia_files/vk.svg" alt="Иконка VK"></a><a data-v-567e2429="" href="https://www.instagram.com/nikitoss420/"><img data-v-567e2429="" src="./siberia_files/instagram.svg" alt="Иконка Instagram"></a></div><div data-v-567e2429=""></div><div data-v-567e2429="" class="anchorDiv"><a data-v-567e2429="" href="http://localhost:8080/#Roads"> Маршруты </a><a data-v-567e2429="" href="http://localhost:8080/#Photo"> Фото </a><a data-v-567e2429="" href="http://localhost:8080/Footer"> Контакты </a></div></div></div></div><div data-v-6d97fc23="" id="About us"><div data-v-6d97fc23="" class="mainDiv"><div data-v-6d97fc23="" class="headerInnerDiv"><div data-v-6d97fc23="" class="textDouble"><div data-v-6d97fc23="" class="textBack"> Добро пожаловать! </div><div data-v-6d97fc23="" class="textFront"> Добро пожаловать! </div></div><div data-v-6d97fc23="" style="color: white;"><p data-v-6d97fc23=""> Сибирь- это страна, в которой ещё осталось много настоящего. Есть и гигантские просторы, высокие горы, настоящие морозы, Байкал и море тайги. Есть люди, ходящие на волков, есть исследователи таёжных лесов, проложившие тысячи километров просек, есть староверы-отшельники. </p></div><div data-v-6d97fc23="" class="divJournal"> Журнал "Неизвестная Сибирь" </div></div></div><div data-v-6d97fc23="" class="contentDiv"><div data-v-6d97fc23="" class="topDiv"><img data-v-6d97fc23="" src="./siberia_files/leftpic.214180a6.jpg" width="100%" height="100%" alt="blured image" class="bluredImg"></div><div data-v-6d97fc23="" class="overflowDiv"><div data-v-6d97fc23="" style="max-width: 80%;"><p data-v-6d97fc23="" class="about-us-phrase"> О нас </p></div><div data-v-6d97fc23="" style="max-width: 80%;"><p data-v-6d97fc23="" class="infoaboutus"> Мы проводим туры в красивейшие места Сибири. Предлагаем большое количество активных программ с открытым набором в группы - присоединиться можно как одному участнику, так и с друзьями. Для организованных групп от 10 человек мы готовы предложить поход по любому из имеющихся у нас на сайте маршрутов в отдельные удобные сроки.<br data-v-6d97fc23=""><br data-v-6d97fc23=""> Инструкторы, с которыми вы можете отправиться в путешествие, прошли множество походов и специальную подготовку. Это опытные путешественники, увлеченные и творческие люди, для которых походы любого типа, в горы и не только, являются любимым делом и важной частью жизни. Они познакомят вас с секретами туристского быта, расскажут о природе и достопримечательностях маршрута, окажут поддержку и всю необходимую помощь, помогут организовать в группе комфортную психологическую обстановку. </p></div><div data-v-6d97fc23="" class="buttonPodr"><button data-v-6d97fc23="" class="btnClass"> Подробнее </button></div></div><div data-v-6d97fc23="" class="middlerightDiv"><img data-v-6d97fc23="" src="./siberia_files/rightpic.fa247ae9.jpg" alt="right img" class="rightimg"></div></div></div><div data-v-4d0d7e6b="" class="mainDiv" id="Road types"><div data-v-4d0d7e6b="" class="backgroundDiv"><div data-v-4d0d7e6b="" style="text-align: center;"><p data-v-4d0d7e6b="" class="pBig">Типы маршрутов</p><p data-v-4d0d7e6b="" class="pSmall">Типы маршрутов</p></div><div data-v-4d0d7e6b="" class="pictureDiv"><img data-v-4d0d7e6b="" width="100%" src="./siberia_files/forest.90cee0b8.jpg" alt="Picture" class="imgStyle"></div><div data-v-4d0d7e6b="" class="botDiv"><div data-v-4d0d7e6b=""></div><div data-v-4d0d7e6b=""><p data-v-4d0d7e6b="" class="botP">То, что ты не увидишь в городе!</p></div><div data-v-4d0d7e6b=""></div></div></div><div data-v-4d0d7e6b="" class="center-of-page-block"><div data-v-4d0d7e6b="" class="container-abs"><div data-v-4d0d7e6b="" class="absDiv"><div data-v-4d0d7e6b="" class="innerDiv"><p data-v-4d0d7e6b="" class="marshType">Пешие</p><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/dog.svg" alt="Иконка Лапки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">Восхождение</p></div><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/dog.svg" alt="Иконка Лапки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">Скалолазанье</p></div><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/dog.svg" alt="Иконка Лапки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">Переходы налегке</p></div><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/dog.svg" alt="Иконка Лапки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">Переходы с рюкзаками</p></div><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/dog.svg" alt="Иконка Лапки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">Горный лагерь</p></div></div></div><div data-v-4d0d7e6b="" class="absDiv addDivClass"><div data-v-4d0d7e6b="" class="innerDiv"><p data-v-4d0d7e6b="" class="marshType">Водные</p><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/duck.svg" alt="Иконка Утки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">Сплав</p></div><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/duck.svg" alt="Иконка Утки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">На байдарках</p></div><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/duck.svg" alt="Иконка Утки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">На морских каяках</p></div><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/duck.svg" alt="Иконка Утки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">На лодках</p></div><div data-v-4d0d7e6b="" class="marshList"><img data-v-4d0d7e6b="" src="./siberia_files/duck.svg" alt="Иконка Утки" style="margin-right: 5px;"><p data-v-4d0d7e6b="" class="pTypes">Рыбалка</p></div></div></div></div></div></div><div data-v-744e1c14="" class="mainDiv" id="Roads"><div data-v-744e1c14="" class="absDiv"></div><div data-v-744e1c14="" class="contentDiv"><div data-v-744e1c14="" style="text-align: center;"><p data-v-744e1c14="" class="bigP">Маршруты</p><p data-v-744e1c14="" class="smallP">Маршруты</p></div><div data-v-2dedc691="" data-v-744e1c14="" class="mainDiv3"><button data-v-2dedc691="" class="btnClass" style="left: -1%;"> &lt; </button><div data-v-2dedc691="" class="ownerDiv"><ul data-v-2dedc691="" class="mainSliderUl3 mainSliderUl2" style="transform: translateX(0%);"><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-744e1c14="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-744e1c14="" class="imgDiv" data-v-2dedc691=""><img data-v-744e1c14="" height="260px" src="./siberia_files/ermit_eu41VUl.jpg" alt="cat" class="imgSlider"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemTitle">Плато Путорана</p></div><div data-v-744e1c14="" data-v-2dedc691="" style="width: 100%;"><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemContent">Под полярным небом</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="blueline"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="">Сложность</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="duckDiv"><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-744e1c14="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-744e1c14="" class="imgDiv" data-v-2dedc691=""><img data-v-744e1c14="" height="260px" src="./siberia_files/ermit_eu41VUl.jpg" alt="cat" class="imgSlider"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemTitle">Байкал</p></div><div data-v-744e1c14="" data-v-2dedc691="" style="width: 100%;"><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemContent">Пять дней по льду Байкала (с размещением на базах)</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="blueline"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="">Сложность</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="duckDiv"><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-744e1c14="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-744e1c14="" class="imgDiv" data-v-2dedc691=""><img data-v-744e1c14="" height="260px" src="./siberia_files/ermit_eu41VUl.jpg" alt="cat" class="imgSlider"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemTitle">Ленские столбы</p></div><div data-v-744e1c14="" data-v-2dedc691="" style="width: 100%;"><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemContent">Путешествие к Ленским и Синским столбам в Якутии</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="blueline"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="">Сложность</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="duckDiv"><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-744e1c14="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-744e1c14="" class="imgDiv" data-v-2dedc691=""><img data-v-744e1c14="" height="260px" src="./siberia_files/ermit_eu41VUl.jpg" alt="cat" class="imgSlider"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemTitle">Плато Путорана</p></div><div data-v-744e1c14="" data-v-2dedc691="" style="width: 100%;"><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemContent">Под полярным небом</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="blueline"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="">Сложность</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="duckDiv"><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-744e1c14="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-744e1c14="" class="imgDiv" data-v-2dedc691=""><img data-v-744e1c14="" height="260px" src="./siberia_files/ermit_eu41VUl.jpg" alt="cat" class="imgSlider"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemTitle">Байкал</p></div><div data-v-744e1c14="" data-v-2dedc691="" style="width: 100%;"><p data-v-744e1c14="" data-v-2dedc691="" class="sliderItemContent">Пять дней по льду Байкала (с размещением на базах)</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="blueline"></div><div data-v-744e1c14="" data-v-2dedc691=""><p data-v-744e1c14="" data-v-2dedc691="">Сложность</p></div><div data-v-744e1c14="" data-v-2dedc691="" class="duckDiv"><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/blackDuck.svg" alt="Иконка Черной утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div><div data-v-744e1c14="" data-v-2dedc691=""><img data-v-744e1c14="" data-v-2dedc691="" src="./siberia_files/greyDuck.svg" alt="Иконка Серой утки"></div></div></div></li></ul></div><button data-v-2dedc691="" class="btnClass" style="right: 1%;"> &gt; </button></div><div data-v-744e1c14=""><button data-v-744e1c14="" class="btnClass" style="width: 220px; height: 37px;"> Все маршруты </button></div><div data-v-744e1c14="" class="footer"><div data-v-744e1c14="" class="select-container"><label data-v-744e1c14="" for="select1">Желаемая дата</label><div data-v-744e1c14="" id="select1" class="listRoads"><select data-v-744e1c14=""><option data-v-744e1c14="">15.11.2020 </option><option data-v-744e1c14="">16.11.2020 </option><option data-v-744e1c14="">17.11.2020 </option><option data-v-744e1c14="">18.11.2020 </option><option data-v-744e1c14="">19.11.2020 </option></select></div></div><div data-v-744e1c14="" class="select-container"><label data-v-744e1c14="" for="select2">Количество дней</label><div data-v-744e1c14="" id="select2" class="listRoads"><select data-v-744e1c14=""><option data-v-744e1c14="">1 день</option><option data-v-744e1c14="">2 дня</option><option data-v-744e1c14="">3 дня</option><option data-v-744e1c14="">4 дня</option><option data-v-744e1c14="">5 дней</option><option data-v-744e1c14="">6 дней</option><option data-v-744e1c14="">7 дней</option></select></div></div><div data-v-744e1c14="" class="select-container"><label data-v-744e1c14="" for="select3">Тип маршрута</label><div data-v-744e1c14="" id="select3" class="listRoads"><select data-v-744e1c14=""><option data-v-744e1c14="">Наземный</option><option data-v-744e1c14="">Водный</option><option data-v-744e1c14="">Смешанный</option><option data-v-744e1c14="">Пеший</option></select></div></div><div data-v-744e1c14="" class="select-container"><button data-v-744e1c14="" class="btnClass" style="background-color: rgb(119, 119, 119); color: white; height: 62px; margin-top: 18px; width: 100%;"> Подобрать тур </button></div></div></div></div><div data-v-7d7c6933="" class="mainDiv" id="Reviews"><div data-v-7d7c6933="" class="centeringDiv"><p data-v-7d7c6933="" class="textClass">Отзывы путешественников</p><p data-v-7d7c6933="" class="textClassAdd">Отзывы путешественников</p></div><div data-v-7d7c6933="" class="middleDiv"><div data-v-2dedc691="" data-v-7d7c6933="" class="mainDiv3"><button data-v-2dedc691="" class="btnClass" style="left: -1%;"> &lt; </button><div data-v-2dedc691="" class="ownerDiv"><ul data-v-2dedc691="" class="mainSliderUl3 mainSliderUl2" style="transform: translateX(0%);"><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-7d7c6933="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-7d7c6933="" data-v-2dedc691="" class="imgDiv"><img data-v-7d7c6933="" data-v-2dedc691="" height="200px" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo" class="imgSlider"></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemTitle pStream"> 1СветОчка </p></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemContent pArch">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.</p></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-7d7c6933="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-7d7c6933="" data-v-2dedc691="" class="imgDiv"><img data-v-7d7c6933="" data-v-2dedc691="" height="200px" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo" class="imgSlider"></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemTitle pStream"> 2СветОчка </p></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemContent pArch">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.</p></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-7d7c6933="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-7d7c6933="" data-v-2dedc691="" class="imgDiv"><img data-v-7d7c6933="" data-v-2dedc691="" height="200px" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo" class="imgSlider"></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemTitle pStream"> 3СветОчка </p></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemContent pArch">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.</p></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-7d7c6933="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-7d7c6933="" data-v-2dedc691="" class="imgDiv"><img data-v-7d7c6933="" data-v-2dedc691="" height="200px" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo" class="imgSlider"></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemTitle pStream"> 4СветОчка </p></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemContent pArch">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.</p></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-7d7c6933="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-7d7c6933="" data-v-2dedc691="" class="imgDiv"><img data-v-7d7c6933="" data-v-2dedc691="" height="200px" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo" class="imgSlider"></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemTitle pStream"> 5СветОчка </p></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemContent pArch">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.</p></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-7d7c6933="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-7d7c6933="" data-v-2dedc691="" class="imgDiv"><img data-v-7d7c6933="" data-v-2dedc691="" height="200px" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo" class="imgSlider"></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemTitle pStream"> 6СветОчка </p></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemContent pArch">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.</p></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi2" style="order: 0;"><div data-v-7d7c6933="" data-v-2dedc691="" class="innerSliderDiv"><div data-v-7d7c6933="" data-v-2dedc691="" class="imgDiv"><img data-v-7d7c6933="" data-v-2dedc691="" height="200px" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo" class="imgSlider"></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemTitle pStream"> 7СветОчка </p></div><div data-v-7d7c6933="" data-v-2dedc691=""><p data-v-7d7c6933="" data-v-2dedc691="" class="sliderItemContent pArch">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque laudantium numquam perspiciatis, quidem totam.</p></div></div></li></ul></div><button data-v-2dedc691="" class="btnClass" style="right: 1%;"> &gt; </button></div></div><div data-v-7d7c6933="" class="centeringDiv" style="background-color: white;"><button data-v-7d7c6933="" class="btn"> Все отзывы </button><p data-v-7d7c6933="" class="pSale">Получи скидку 20% на свой первый тур прямо сейчас!</p><div data-v-7d7c6933="" class="formDiv"><input data-v-7d7c6933="" type="text" placeholder="E-mail"><button data-v-7d7c6933="" class="submitButton">Отправить</button></div></div></div><div data-v-da02f8fe="" class="mainDiv" id="Photo"><div data-v-da02f8fe="" class="pDiv"><p data-v-da02f8fe="" class="pBig">Фото и видео</p><p data-v-da02f8fe="" class="pSmall">Фото и видео</p></div><div data-v-da02f8fe="" class="underSliderGrid"><div data-v-2dedc691="" data-v-da02f8fe="" class="mainDiv3"><button data-v-2dedc691="" class="btnClass" style="left: 1.3%;"> &lt; </button><div data-v-2dedc691="" class="ownerDiv"><ul data-v-2dedc691="" class="mainSliderUl3 mainSliderUl1" style="transform: translateX(0%);"><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi1" style="order: 0;"><div data-v-da02f8fe="" data-v-2dedc691="" class="gridDiv"><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><iframe data-v-da02f8fe="" data-v-2dedc691="" width="100%" height="100%" src="./siberia_files/Ei1z8tt3zPQ.html" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi1" style="order: 0;"><div data-v-da02f8fe="" data-v-2dedc691="" class="gridDiv"><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><iframe data-v-da02f8fe="" data-v-2dedc691="" width="100%" height="100%" src="./siberia_files/Ei1z8tt3zPQ(1).html" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi1" style="order: 0;"><div data-v-da02f8fe="" data-v-2dedc691="" class="gridDiv"><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><iframe data-v-da02f8fe="" data-v-2dedc691="" width="100%" height="100%" src="./siberia_files/Ei1z8tt3zPQ(2).html" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi1" style="order: 0;"><div data-v-da02f8fe="" data-v-2dedc691="" class="gridDiv"><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><iframe data-v-da02f8fe="" data-v-2dedc691="" width="100%" height="100%" src="./siberia_files/Ei1z8tt3zPQ(3).html" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div></div></li><li data-v-2dedc691="" class="innerSliderLi3 innerSliderLi1" style="order: 0;"><div data-v-da02f8fe="" data-v-2dedc691="" class="gridDiv"><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><iframe data-v-da02f8fe="" data-v-2dedc691="" width="100%" height="100%" src="./siberia_files/Ei1z8tt3zPQ(4).html" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div><div data-v-da02f8fe="" data-v-2dedc691="" class="picorvid"><img data-v-da02f8fe="" data-v-2dedc691="" src="./siberia_files/ermit_eu41VUl.jpg" alt="photo"></div></div></li></ul></div><button data-v-2dedc691="" class="btnClass" style="right: 1%;"> &gt; </button></div></div></div><div data-v-2ab7ef13="" class="mainDiv" id="Asks answers"><div data-v-2ab7ef13="" class="headerDiv"><p data-v-2ab7ef13="" class="pBig">Вопросы и ответы</p><p data-v-2ab7ef13="" class="pSmall">Вопросы и ответы</p><button data-v-2ab7ef13="" class="btn-back visibleBlock">Назад</button></div><div data-v-2ab7ef13="" class="askAnswersDiv"><div data-v-2ab7ef13="" class="asksDiv"><div data-v-2ab7ef13="" class="askDiv active"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogRotate.svg" alt="Иконка Крученой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Зачем мне это надо?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Как попасть в поход?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Что нужно взять в поход?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Что лучше для пешего похода- ботинки или кроссовки?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Работают ли мобильные телефоны в горах?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Есть ли возможность где- то подзарядить технику?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Часто ли бывают привалы?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">А если я заболею и не смогу дальше идти?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Как мыться и соблюдать гигиену в походах?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Возможна ли в походе рыбалка?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Можно ли взять с собой собаку?</p></div></div><div data-v-2ab7ef13="" class="askDiv"><div data-v-2ab7ef13=""><img data-v-2ab7ef13="" src="./siberia_files/dogGreen.svg" alt="Иконка зеленой лапы" class="lapaClass"></div><div data-v-2ab7ef13="" class="divAsk"><p data-v-2ab7ef13="" class="pAsk">Если я вегетарианец (-ка) или просто не ем тушёнку, сгущёнку, что-то ещё?</p></div></div></div><div data-v-2ab7ef13="" class="rightDiv visibleBlock"><div data-v-2ab7ef13="" class="divWithAsk"><p data-v-2ab7ef13="" class="pWithAsk">Как попасть в поход?</p></div><div data-v-2ab7ef13="" class="divWithAnswer"></div><p data-v-2ab7ef13="" class="pWithAnswer"> 1Для начала вам необходимо определиться, куда пойти в поход и когда, в этом вам поможет поиск по походам. После того, как вы выбрали маршрут и сроки и путешествия, нужно заполнить заявку и получить по почте письмо с информацией. До похода вас будет вести опытный координатор, отвечать на все вопросы по почте и телефону, информировать о способах оплаты, списке необходимого снаряжения, билетах. А за неделю до похода на электронную почту вы получите Памятку с телефоном инструктора, информацией о времени и месте встречи группы, и список группы. </p></div></div><div data-v-2ab7ef13="" style="height: 150px;"></div></div><div data-v-6cc24a9a="" class="mainDiv" id="Footer"><div data-v-6cc24a9a="" class="contentDiv"><div data-v-6cc24a9a="" class="innerDiv"><p data-v-6cc24a9a="" class="pPoster">Сибирь есть. Она неизвестная. Она настоящая!</p><button data-v-6cc24a9a="">Подобрать тур</button></div><div data-v-6cc24a9a="" class="linksDiv"><div data-v-6cc24a9a="" class="smallDiv"><a data-v-6cc24a9a="" href="http://localhost:8080/#About%20Us">О нас</a><a data-v-6cc24a9a="" href="http://localhost:8080/#Start">Контакты</a></div><div data-v-6cc24a9a="" class="smallDiv"><a data-v-6cc24a9a="" href="http://localhost:8080/#Roads">Маршруты</a><a data-v-6cc24a9a="" href="http://localhost:8080/#Photo">Фото</a></div><div data-v-6cc24a9a="" class="smallDiv"><a data-v-6cc24a9a="" href="http://localhost:8080/#Reviews">Отзывы</a><a data-v-6cc24a9a="" href="http://localhost:8080/#Asks%20answers" style="width: 130px;">Вопросы и ответы</a></div><div data-v-6cc24a9a="" class="smallDiv" style="margin-top: -18px;"><div data-v-6cc24a9a="" class="email-btn"><p data-v-6cc24a9a="" class="pRenewal">Подпишитесь на наши обновления</p><input data-v-6cc24a9a="" type="text" placeholder="Email"><button data-v-6cc24a9a="" class="buttonRenewal">Клац :)</button></div></div></div></div></div></div></div>
+    <!-- built files will be auto injected -->
+  <script type="text/javascript" src="./siberia_files/chunk-vendors.js.Без названия"></script><script type="text/javascript" src="./siberia_files/app.js.Без названия"></script>
+
+</body></html>

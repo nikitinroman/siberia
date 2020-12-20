@@ -19,8 +19,8 @@
           <a style="width: 130px" href="#Asks answers">Вопросы и ответы</a>
         </div>
         <div class="smallDiv" style="margin-top: -18px">
-          <p class="pRenewal">Подпишитесь на наши обновления</p>
-          <div>
+          <div class="email-btn">
+            <p class="pRenewal">Подпишитесь на наши обновления</p>
             <input type="text" placeholder="Email" />
             <button class="buttonRenewal">Клац :)</button>
           </div>
@@ -112,13 +112,24 @@ input {
 }
 
 .buttonRenewal {
-  height: 47px;
+  height: 43px;
   width: 90px;
   box-shadow: none;
-  margin-top: 0;
 }
 
 .buttonRenewal:hover {
   cursor: pointer;
+}
+@media screen and (max-width: 700px){
+  .linksDiv{
+    flex-wrap: wrap;
+  }
+  .email-btn{
+    margin-top: 25px  ;
+  }
+  .pPoster{
+    color: #777777;
+    font-size: 30px;
+  }
 }
 </style>

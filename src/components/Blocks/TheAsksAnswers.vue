@@ -3,13 +3,13 @@
     <div class="headerDiv">
       <p class="pBig">Вопросы и ответы</p>
       <p class="pSmall">Вопросы и ответы</p>
+      <button :class="{visibleBlock: !this.show}" v-on:click="choosedAndCheckWidth()" class="btn-back">Назад</button>
     </div>
     <div class="askAnswersDiv">
-      <div style="width: 15%"></div>
-      <div class="asksDiv">
+      <div class="asksDiv" :class="{invisibleBlock: !showask}">
         <div
-          :class="{ active: chosed === ask.id }"
-          v-on:click="chosed = ask.id"
+          :class="{ active: choosed === ask.id }"
+          v-on:click="choosedAndCheckWidth(ask.id)"
           class="askDiv"
           v-for="ask in listAskAnswers"
           :key="ask.id"
@@ -17,7 +17,7 @@
           <div>
             <img
               class="lapaClass"
-              v-if="chosed != ask.id"
+              v-if="choosed != ask.id"
               src="/images/icons/dogGreen.svg"
               alt="Иконка зеленой лапы"
             />
@@ -33,18 +33,17 @@
           </div>
         </div>
       </div>
-      <div class="rightDiv">
+      <div class="rightDiv" :class="{visibleBlock: !showansw}">
         <div class="divWithAsk">
-          <p class="pWithAsk">{{ listAskAnswers[chosed].ask }}</p>
+          <p class="pWithAsk">{{ listAskAnswers[choosed].ask }}</p>
         </div>
         <div class="divWithAnswer"></div>
         <p class="pWithAnswer">
-          {{ chosed }}{{ listAskAnswers[chosed].answer }}
+          {{ choosed }}{{ listAskAnswers[choosed].answer }}
         </p>
       </div>
-      <div style="width: 10%"></div>
     </div>
-    <div style="height: 100px"></div>
+    <div style="height: 150px"></div>
   </div>
 </template>
 
@@ -53,7 +52,11 @@ export default {
   name: "AsksAnswers",
   data() {
     return {
-      chosed: 1,
+      show: false,
+      choosed: 1,
+      clicked: 0,
+      showask: true,
+      showansw: true,
       listAskAnswers: [
         {
           id: 1,
@@ -131,7 +134,36 @@ export default {
       ]
     };
   },
-  components: {}
+  methods: {
+    choosedAndCheckWidth(id) {
+      if (id) {
+        this.choosed = id;
+      }
+      if (window.innerWidth < 800){
+          this.clicked = 1
+          this.show = !this.show;
+          this.showask = this.showansw;
+          this.showansw = !this.showask;
+      }
+    },
+    handleResize() {
+      if (window.innerWidth < 800 && this.showask !== false){
+        this.showansw = false;
+      }
+      else if(window.innerWidth > 800){
+        this.showansw = true;
+        this.showask = true;
+        this.show = false;
+      }
+    }
+  },
+  created() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.handleResize);
+  }
 };
 </script>
 
@@ -161,7 +193,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .askDiv {
@@ -189,7 +221,7 @@ export default {
 .rightDiv {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  max-width: 30%;
   border: 1px solid deepskyblue;
   /*border-image-source: linear-gradient(180deg, #7CA5CA 0%, rgba(124, 165, 202, 0) 100%);*/
 }
@@ -222,7 +254,7 @@ export default {
 
 .divWithAsk {
   background: linear-gradient(180deg, #7aa5aa 0%, rgba(122, 165, 170, 0) 100%);
-  height: 60px;
+  height: 70px;
   display: flex;
   align-items: center;
 }
@@ -230,7 +262,7 @@ export default {
 .pWithAsk {
   font-size: 22px;
   font-family: archivo, sans-serif;
-  margin-left: 4%;
+  margin: 0 12px;
 }
 
 .divWithAnswer {
@@ -245,5 +277,38 @@ export default {
   font-family: archivo, sans-serif;
   margin-left: 4%;
   margin-top: 20px;
+}
+.visibleBlock{
+  display: none;
+}
+.invisibleBlock{
+  display: none;
+}
+.btn-back{
+  background: transparent;
+  transition: 0.5s;
+  width: 120px;
+  height: 30px;
+  border: 1px solid #7ca5ca;
+  filter: drop-shadow(0px 0px 3px #1a456c);
+  margin-bottom: 10px;
+}
+.btn-back:hover {
+  background-color: cadetblue;
+}
+
+.btn-back:focus {
+  outline: none;
+}
+@media screen and (max-width: 800px) {
+  .pBig{
+    display: none;
+  }
+  .pSmall{
+    margin: 10px 0;
+  }
+  .rightDiv{
+    max-width: 70%;
+  }
 }
 </style>

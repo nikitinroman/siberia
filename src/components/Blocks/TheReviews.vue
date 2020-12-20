@@ -2,10 +2,13 @@
   <div class="mainDiv">
     <div class="centeringDiv">
       <p class="textClass">Отзывы путешественников</p>
-      <p class="textClass textClassAdd">Отзывы путешественников</p>
+      <p class="textClassAdd">Отзывы путешественников</p>
     </div>
     <div class="middleDiv">
-      <Slider :slider-items="listOfReviews" :transform="25">
+      <Slider
+        :slider-items="listOfReviews"
+        :photo-video="false"
+      >
         <template v-slot="{ item }">
           <div class="innerSliderDiv">
             <div class="imgDiv">
@@ -48,6 +51,8 @@ export default {
   name: "Reviews",
   data() {
     return {
+      quantity: 3,
+      transform: 33.33,
       listOfReviews: [
         {
           id: 1,
@@ -226,6 +231,8 @@ export default {
 .textClassAdd {
   margin-top: -107px;
   font-size: 36px;
+  font-family: archivo, sans-serif;
+  color: rgba(255, 255, 255, 0.15);
 }
 
 .pStream {
@@ -252,5 +259,21 @@ export default {
 input {
   height: 40px;
   width: 285px;
+}
+@media screen and (max-width: 850px) {
+  .textClassAdd{
+    margin: 0;
+  }
+  .textClass{
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .textClassAdd{
+    font-size: 25px;
+  }
+  input{
+    width: 200px;
+  }
 }
 </style>

@@ -1,5 +1,15 @@
 <template>
   <div style="height: 100vh; width: 100%">
+    <div class="weather">
+      <div class="temp">
+        <p class="margin-p">Минимальная температура {{ tempMin }}</p>
+        <p class="margin-p">Максимальная температура {{ tempMax }}</p>
+      </div>
+      <div class="wind-cloud">
+        <p class="margin-p">Ощущается как {{ meanTempFeel }}</p>
+        <p class="margin-p">Преимущественно: {{ o.most }}</p>
+      </div>
+    </div>
     <div class="topDiv">
       <p class="pBig">Программа тура</p>
       <p class="pSmall">Программа тура</p>
@@ -9,9 +19,7 @@
         <div></div>
         <div class="leftDiv">
           <div class="titleDiv" style="justify-content: flex-start">
-            <p class="currentDay">
-              День {{ currentDay }}
-            </p>
+            <p class="currentDay">День {{ currentDay }}</p>
           </div>
           <div>
             <p style="font-family: archivo, archivo, sans-serif">
@@ -24,18 +32,14 @@
               v-on:click="currentDay -= 1"
               v-if="currentDay > 1"
             >
-              <p class="pInButton">
-                &#8592; День {{ currentDay - 1 }}
-              </p>
+              <p class="pInButton">&#8592; День {{ currentDay - 1 }}</p>
             </button>
             <button
               class="buttonStyle"
               v-on:click="currentDay += 1"
               v-if="currentDay < Object.keys(otherContent[id].days).length"
             >
-              <p class="pInButton">
-                День {{ currentDay + 1 }} &#8594;
-              </p>
+              <p class="pInButton">День {{ currentDay + 1 }} &#8594;</p>
             </button>
           </div>
         </div>
@@ -69,8 +73,20 @@
 
 <script>
 export default {
+  name: "AboutTour",
+
+  props: [
+      "tourLocation"
+  ],
+
   data() {
     return {
+      dataWeather: [],
+      meanTempFeel: 0,
+      tempMin: 999,
+      tempMax: -999,
+      weather: [],
+      o: { freq: {}, most: "" },
       id: this.$route.params["id"],
       tour: this.$route.params["tour"],
       currentDay: 1,
@@ -198,7 +214,44 @@ export default {
       }
     };
   },
-  name: "AboutTour"
+
+  async created(){
+    await this.loadWeather();
+  },
+
+  methods: {
+    loadWeather: async function() {
+      const response = await fetch(
+        "http://api.openweathermap.org/data/2.5/forecast?id=" + this.tourLocation.toString() + "&appid=8d69654fdec285bbbc037a96e0fa389b"
+      );
+      this.dataWeather = await response.json();
+      this.meanData(this.dataWeather);
+    },
+    meanData(data) {
+      for (let i = 0; i < data.list.length; i++) {
+        this.meanTempFeel += data.list[i].main.feels_like;
+        this.weather.push(data.list[i].weather[0].main);
+        if (this.tempMin > data.list[i].main.temp_min){
+          this.tempMin = data.list[i].main.temp_min;
+        }
+        if (this.tempMax < data.list[i].main.temp_max){
+          this.tempMax = data.list[i].main.temp_max;
+        }
+      }
+
+      this.o = this.weather.reduce(
+        function(o, s) {
+          o.freq[s] = (o.freq[s] || 0) + 1;
+          if (!o.freq[o.most] || o.freq[s] > o.freq[o.most]) o.most = s;
+          return o;
+        },
+        { freq: {}, most: "" }
+      );
+      this.meanTempFeel = Math.round(this.meanTempFeel / data.list.length - 273.15)
+      this.tempMax = Math.round(this.tempMax - 273.15)
+      this.tempMin = Math.round(this.tempMin - 273.15)
+    }
+  }
 };
 </script>
 
@@ -217,14 +270,17 @@ export default {
   background-image: url("/brightForest.jpg");
   background-size: cover;
   background-position: center;
-  height: 70%;
+  min-height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .mainDiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 85%;
+  min-height: 85%;
 }
 .leftDiv {
   display: flex;
@@ -236,7 +292,6 @@ export default {
   max-width: 30%;
   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.25);
   border: 1px solid steelblue;
-  /*border-image-source: linear-gradient(180deg, #7CA5CA 0%, rgba(124, 165, 202, 0) 100%);*/
 }
 .rightDiv {
   display: flex;
@@ -261,7 +316,6 @@ export default {
 .buttonDiv {
   display: flex;
   justify-content: space-around;
-  width: 50%;
 }
 
 .buttonStyle {
@@ -334,4 +388,43 @@ button:hover {
   margin: 0;
 }
 
+.weather {
+  position: absolute;
+  background: transparent;
+  border: 1px solid #7ca5ca;
+  top: 3%;
+  right: 19%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.temp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wind-cloud {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.margin-p {
+  margin: 5px 10px;
+}
+@media screen and (max-width: 630px) {
+  .pInButton {
+    font-size: 15px;
+  }
+  .buttonBot {
+    margin-top: 20px;
+  }
+  .pBig {
+    display: none;
+  }
+  .pSmall {
+    margin: 10px 0;
+  }
+}
 </style>

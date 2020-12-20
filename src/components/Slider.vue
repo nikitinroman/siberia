@@ -1,26 +1,35 @@
 <template>
-  <div class="mainDiv3" :class="{ mainDiv1: quantity === 1 }">
-    <button class="btnClass" style="left:-1%" @click="moveLeft">
+  <div
+    class="mainDiv3"
+  >
+    <button class="btnClass" :style="{left: leftPos}" @click="moveLeft">
       &lt;
     </button>
     <div class="ownerDiv">
       <ul
         class="mainSliderUl3"
-        :class="{ mainSliderUl1: quantity === 1, transDiv: transition }"
+        :class="{
+          mainSliderUl1: quantity === 1,
+          mainSliderUl2: quantity === 2,
+          transDiv: transition
+        }"
         :style="{ transform: 'translateX(' + startTrans + '%)' }"
       >
         <li
           v-for="item in sliderItems"
           :key="item.id"
           class="innerSliderLi3"
-          :class="{ innerSliderLi1: quantity === 1 }"
+          :class="{
+            innerSliderLi1: quantity === 1,
+            innerSliderLi2: quantity === 2
+          }"
           :style="{ order: item.order }"
         >
           <slot v-bind:item="item"></slot>
         </li>
       </ul>
     </div>
-    <button class="btnClass" style="right: 0.5%" @click="moveRight">
+    <button class="btnClass" style="right: 1%" @click="moveRight">
       &gt;
     </button>
   </div>
@@ -28,12 +37,23 @@
 
 <script>
 export default {
-  props: ["sliderItems", "quantity", "transform"],
+  props: ["sliderItems", "photoVideo"],
   name: "Slider",
+
+  data() {
+    return {
+      leftPos: '-1%',
+      quantity: 3,
+      transform: 33.33,
+      transition: false,
+      currentId: 0,
+      startTrans: 0
+    };
+  },
 
   methods: {
     async moveLeft() {
-      this.startTrans = this.trans;
+      this.startTrans = this.transform;
       this.transition = true;
       await new Promise(resolve => setTimeout(resolve, 500));
       this.currentId--;
@@ -45,7 +65,7 @@ export default {
       this.transition = false;
     },
     async moveRight() {
-      this.startTrans = -this.trans;
+      this.startTrans = -this.transform;
       this.transition = true;
       await new Promise(resolve => setTimeout(resolve, 500));
       this.sliderItems[this.currentId].order += 1;
@@ -55,15 +75,32 @@ export default {
       }
       this.startTrans = 0;
       this.transition = false;
-    }
+    },
+    handleResize() {
+      if (window.innerWidth < 1000) {
+        this.quantity = 2;
+        this.transform = 50;
+      } else {
+        this.quantity = 3;
+        this.transform = 33.333;
+      }
+      if (window.innerWidth < 720) {
+        this.quantity = 1;
+        this.transform = 100;
+      }
+      if (this.photoVideo){
+        this.quantity = 1;
+        this.transform = 100;
+        this.leftPos = '1.3%';
+      }
   },
-  data() {
-    return {
-      transition: false,
-      currentId: 0,
-      trans: this.transform,
-      startTrans: 0
-    };
+  },
+  created() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.handleResize);
   }
 };
 </script>
@@ -72,30 +109,34 @@ export default {
 .ownerDiv {
   overflow: hidden;
   display: flex;
-  max-width: 100%;
   margin: auto;
 }
 
 .mainSliderUl3 {
   display: flex;
   margin-left: -33.333%;
+  width: 100%;
+}
+.mainSliderUl2 {
+  display: flex;
+  margin-left: -50%;
 }
 .mainSliderUl1 {
   display: flex;
-  margin-left: 0;
+  margin-left: -100%;
 }
 
 .innerSliderLi3 {
   height: 99%;
-  width: 25%;
+  width: 33.33%;
   padding: 0 5px;
   box-sizing: border-box;
 }
+.innerSliderLi2 {
+  width: 50%;
+}
 .innerSliderLi1 {
-  height: 100%;
   width: 100%;
-  padding: 0 0;
-  box-sizing: border-box;
 }
 
 li {
@@ -129,10 +170,6 @@ ul {
 .mainDiv3 {
   align-self: center;
   position: relative;
-  max-width: 70%;
-}
-
-.mainDiv1 {
-  max-width: 100%;
+  width: 70%;
 }
 </style>

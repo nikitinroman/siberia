@@ -16,29 +16,33 @@
         <div></div>
       </div>
     </div>
-    <div class="absDiv">
-      <div class="innerDiv">
-        <p class="marshType">Пешие</p>
-        <div class="marshList" v-for="row in listOfGround" v-bind:key="row">
-          <img
-            style="margin-right: 5px"
-            src="/images/icons/dog.svg"
-            alt="Иконка Лапки"
-          />
-          <p class="pTypes">{{ row }}</p>
+    <div class="center-of-page-block">
+      <div class="container-abs">
+        <div class="absDiv">
+          <div class="innerDiv">
+            <p class="marshType">Пешие</p>
+            <div class="marshList" v-for="row in listOfGround" v-bind:key="row">
+              <img
+                  style="margin-right: 5px"
+                  src="/images/icons/dog.svg"
+                  alt="Иконка Лапки"
+              />
+              <p class="pTypes">{{ row }}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="absDiv addDivClass">
-      <div class="innerDiv">
-        <p class="marshType">Водные</p>
-        <div class="marshList" v-for="row in listOfWater" v-bind:key="row">
-          <img
-            style="margin-right: 5px"
-            src="/images/icons/duck.svg"
-            alt="Иконка Утки"
-          />
-          <p class="pTypes">{{ row }}</p>
+        <div class="absDiv addDivClass">
+          <div class="innerDiv">
+            <p class="marshType">Водные</p>
+            <div class="marshList" v-for="row in listOfWater" v-bind:key="row">
+              <img
+                  style="margin-right: 5px"
+                  src="/images/icons/duck.svg"
+                  alt="Иконка Утки"
+              />
+              <p class="pTypes">{{ row }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -67,8 +71,7 @@ export default {
         "Рыбалка"
       ]
     };
-  },
-  components: {}
+  }
 };
 </script>
 <style scoped>
@@ -119,19 +122,18 @@ export default {
 
 .absDiv {
   position: absolute;
-  width: 20%;
-  height: 40%;
+  width: 240px;
+  height: 270px;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.55);
-  top: 30%;
-  left: 30%;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .addDivClass {
-  top: 35%;
+  top: 5%;
   left: 47%;
 }
 
@@ -164,5 +166,47 @@ export default {
   margin: 0 0 12px 0;
   text-align: start;
   color: white;
+}
+.center-of-page-block{
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container-abs{
+  height: 300px;
+  width: 450px;
+}
+@media screen and (max-width:540px) {
+  .mainDiv{
+    margin-top: 100px;
+  }
+  .backgroundDiv{
+    height: 80vh;
+  }
+  .botP{
+    font-size: 28px;
+  }
+  .container-abs{
+    display: flex;
+    justify-content: center;
+  }
+  .absDiv{
+    position: relative;
+    width: 170px;
+  }
+  .addDivClass{
+    left: 0;
+  }
+  .innerDiv{
+    width: 100%;
+  }
+  .pBig{
+    display: none;
+  }
+  .center-of-page-block{
+    top: 20%;
+  }
 }
 </style>

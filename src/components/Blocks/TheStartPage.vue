@@ -5,9 +5,6 @@
         <div class="languageDiv">
           Russian
         </div>
-        <!--        <div>-->
-        <!--                    <Burger></Burger>-->
-        <!--        </div>-->
       </div>
 
       <div />
@@ -47,14 +44,9 @@
 </template>
 
 <script>
-// import Burger from '@/components/svgComponents/Burgerpic'
 
 export default {
-  name: "MainBlock",
-
-  components: {
-    // Burger,
-  }
+  name: "MainBlock"
 };
 </script>
 
@@ -85,7 +77,7 @@ a {
 .languageDiv {
   color: white;
   text-decoration: underline;
-  margin-left: 200px;
+  margin-left: 13.5%;
 }
 
 .languageDiv:hover {
@@ -100,12 +92,20 @@ a {
 .linksDiv {
   display: flex;
   justify-content: space-between;
-  width: 8.5%;
+  width: 100px;
 }
 
 .anchorDiv {
   display: flex;
   justify-content: space-between;
-  width: 24%;
+  width: 300px;
+}
+
+@media screen and (max-width: 600px) {
+  .anchorDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
 }
 </style>

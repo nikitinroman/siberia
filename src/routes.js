@@ -13,7 +13,9 @@ export default new VueRouter({
     },
     {
       path: "/aboutTour/:id/:tour",
-      component: AboutTour
+      name: 'AboutTour',
+      component: AboutTour,
+      props: true
     }
   ],
   mode: "history"

@@ -5,8 +5,7 @@
       <p class="pSmall">Фото и видео</p>
     </div>
     <div class="underSliderGrid">
-      <div></div>
-      <Slider :slider-items="sliderItems" :quantity="quantity" :transform="100">
+      <Slider :slider-items="sliderItems" :photo-video="true">
         <template v-slot="{ item }">
           <div class="gridDiv">
             <div class="picorvid">
@@ -30,7 +29,6 @@
           </div>
         </template>
       </Slider>
-      <div></div>
     </div>
   </div>
 </template>
@@ -49,7 +47,7 @@ export default {
           order: 0,
           content: [
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
-            "https://www.youtube.com/embed/xFa2_PVMeDQ",
+            "https://www.youtube.com/embed/Ei1z8tt3zPQ",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg"
           ]
@@ -59,7 +57,7 @@ export default {
           order: 0,
           content: [
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
-            "https://www.youtube.com/embed/xFa2_PVMeDQ",
+            "https://www.youtube.com/embed/Ei1z8tt3zPQ",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg"
           ]
@@ -69,7 +67,7 @@ export default {
           order: 0,
           content: [
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
-            "https://www.youtube.com/embed/xFa2_PVMeDQ",
+            "https://www.youtube.com/embed/Ei1z8tt3zPQ",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg"
           ]
@@ -79,7 +77,7 @@ export default {
           order: 0,
           content: [
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
-            "https://www.youtube.com/embed/xFa2_PVMeDQ",
+            "https://www.youtube.com/embed/Ei1z8tt3zPQ",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg"
           ]
@@ -89,7 +87,7 @@ export default {
           order: 0,
           content: [
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
-            "https://www.youtube.com/embed/xFa2_PVMeDQ",
+            "https://www.youtube.com/embed/Ei1z8tt3zPQ",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg",
             "https://topspb.tv/768x432/uploaded/news_covers/ermit_eu41VUl.jpg"
           ]
@@ -139,8 +137,9 @@ img {
 }
 
 .underSliderGrid {
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .pBig {
@@ -160,5 +159,13 @@ img {
 .picorvid {
   background-color: #ffffff;
   margin: 5px;
+}
+@media screen and (max-width: 500px) {
+  .pBig{
+    display: none;
+  }
+  .pSmall{
+    margin: 0;
+  }
 }
 </style>

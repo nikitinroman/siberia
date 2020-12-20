@@ -10,6 +10,7 @@
   "dependencies": {
     "@vue/eslint-config-prettier": "^6.0.0",
     "core-js": "^3.6.5",
+    "request": "^2.88.2",
     "reset-css": "^5.0.1",
     "vue": "^2.6.11",
     "vue-router": "^3.4.9"
